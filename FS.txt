@@ -1,0 +1,54 @@
+assets
+    |_img
+public
+    |_index.html
+    |_styles.css
+    |_bundle.js(webpack)
+    |_bundle.js.map(webpack)
+client
+    |_components
+        |_index.js
+        |_Nav.js
+        |_Routes.js
+        |_Admin.js
+        |_Products.js
+        |_SingleProduct.js
+        |_CreateProduct.js
+        |_ProductForm.js
+        |_UpdateProduct.js
+        |_CreateAdmin.js
+        |_AdminForm.js
+        |_UpdateAdmin.js
+        |_App.js
+        |_Contact.js
+    |_store
+        |_index.js
+        |_products.js
+        |_users.js
+server
+    |_index.js
+    |_db
+        |_models
+            |_index.js
+            |_Products.js
+            |_Users.js
+        |_index.js
+        |_db.js
+    |_api
+        |_index.js
+        |_products.js
+        |_users.js
+        |_auth.js
+utils
+    |_helper.js
+    |_dbFunctions.js
+
+
+webpack.config.js
+.babelrc
+package-lock.json
+package.json
+secrets.js
+README.md
+.editorconfig
+.gitignore
