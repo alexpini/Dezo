@@ -8,6 +8,7 @@ git remote add origin <url to your forked github>
 git remote add upstream <url to base project github>
 
 _____
+
 first step!!
 git checkout master
 git pull upstream dev
