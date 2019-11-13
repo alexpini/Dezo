@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dezo-Dev/Dezo.git"
@@ -16,5 +13,40 @@
   "bugs": {
     "url": "https://github.com/Dezo-Dev/Dezo/issues"
   },
-  "homepage": "https://github.com/Dezo-Dev/Dezo#readme"
+  "homepage": "https://github.com/Dezo-Dev/Dezo#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^5.21.1",
+    "volleyball": "^1.5.1",
+    "babel-loader": "^8.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-react": "^7.6.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  },
+  "scripts": {
+    "webpack": "webpack --mode=production",
+    "webpack:dev": "webpack --w --mode=development",
+    "start:dev": " nodemon server/index.js --ignore dist/ --ignore src/ & npm run webpack:dev",
+    "start": "npm run webpack & node server/index.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  }
 }
