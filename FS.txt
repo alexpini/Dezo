@@ -46,7 +46,6 @@ utils
 
 
 webpack.config.js
-.babelrc
 package-lock.json
 package.json
 secrets.js
