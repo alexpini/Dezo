@@ -21,6 +21,7 @@ client
         |_UpdateAdmin.js
         |_App.js
         |_Contact.js
+        |_AboutUs.js
     |_store
         |_index.js
         |_products.js
@@ -45,7 +46,6 @@ utils
 
 
 webpack.config.js
-.babelrc
 package-lock.json
 package.json
 secrets.js

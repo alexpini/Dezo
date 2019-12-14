@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  <script src="bundle.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body name="app">
+  <div id="root"></div>
+  <script>
+    //this code block is only for resetting the localStorage when the user navigates away from the page. type === 0 when it is a new tab
+    if (window.performance.navigation.type === 0) {
+      localStorage.removeItem("+21");
+    }
+  </script>
+</body>
