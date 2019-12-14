@@ -1,11 +1,8 @@
 import React from "react";
 
-export const Modal21 = props => {
-  const showHideClassName = props.show
-    ? "modal display-block"
-    : "modal display-none";
+export const TwentyOne = props => {
   return (
-    <div className={showHideClassName}>
+    <div>
       <section className="modal-main modal-top">
         <h2>Respectfully Wild</h2>
         <h2>dezo</h2>
