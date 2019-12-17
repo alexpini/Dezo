@@ -1,5 +1,7 @@
 import React from "react";
 import Products from "../Products/Products";
+import ConnectWith from "../Connect/ConnectWIth";
+import Press from "../Press/Press";
 
 class About extends React.Component {
   constructor() {
@@ -29,6 +31,8 @@ class About extends React.Component {
             if you do, we could just import a bunch of components 
             here and they will display in order or whatever */}
         <Products />
+        <Press />
+        <ConnectWith />
       </div>
     );
   }

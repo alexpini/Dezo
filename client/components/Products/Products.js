@@ -30,7 +30,7 @@ const products = [
 class Products extends Component {
   render() {
     return (
-      <div>
+      <div id="products">
         {products.map((product, idx) => {
           let cName = "product-container";
           if (idx === products.length - 1) {
