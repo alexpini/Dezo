@@ -7,6 +7,7 @@ import { Redirect } from "react-router-dom";
 class App extends React.Component {
   constructor() {
     super();
+    this.myRef = React.createRef();
     this.state = {
       show: true,
       month: "",
@@ -16,6 +17,7 @@ class App extends React.Component {
       loading: true
     };
   }
+  scrollToRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
   submitAge = e => {
     e.preventDefault();
     //regex to check for letters/special chars
@@ -34,7 +36,7 @@ class App extends React.Component {
     let dateNow = Date.now() - dateToCheck.getTime();
     let diff = new Date(dateNow);
     let yearDiff = Math.abs(diff.getFullYear() - 1970);
-    console.log("year", yearDiff);
+
     if (yearDiff < 21) {
       this.setState({ error: "You are not 21" });
       return;
@@ -49,6 +51,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    console.log(location.pathname);
     //checks if this has been set. msotly for refresh
     if (localStorage.getItem("+21")) {
       this.setState({ show: false });
