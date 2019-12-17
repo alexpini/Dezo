@@ -211,3 +211,21 @@ html {
   flex-direction: column;
   justify-content: center;
 }
+
+.conn-links {
+  display: flex;
+  justify-content: space-around;
+}
+.conn-headers {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.press-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12rem;
+  margin: auto;
+  width: 85vw;
+}
