@@ -2,36 +2,21 @@ import React, { Component } from "react";
 import { SingleProduct } from "./SingleProduct";
 import { SingleProductImage } from "./SingleProductImage";
 import { Link } from "react-router-dom";
-
-const products = [
-  {
-    id: "1wertt-ww32-2ssd-jkidgd",
-    title: "Coconut Water",
-    description:
-      "This tastes like delicious coconuts. Coconut, water, and fermented sugar make this concoction an instant fav! Please enjoy responsibly. I am making this text longer to signify a real flavor description.",
-    imgURL: "../../assets/images/drink.jpeg"
-  },
-  {
-    id: "1wertt-ww32-2ssd-wwgtrr",
-    title: "Cactus Water",
-    description:
-      "This tastes like delicious cacti. Cactus, water, and fermented sugar make this concoction an instant fav! Please enjoy responsibly. I am making this text longer to signify a real flavor description.",
-    imgURL: "../../assets/images/drink.jpeg"
-  },
-  {
-    id: "1wertt-ww32-2ssd-dfttgh",
-    title: "Watermelon Water",
-    description:
-      "This tastes like delicious watermelons. Watermelon, water, and fermented sugar make this concoction an instant fav! Please enjoy responsibly. I am making this text longer to signify a real flavor description.",
-    imgURL: "../../assets/images/drink.jpeg"
-  }
-];
+import { connect } from "react-redux";
+import { getProducts, deleteProduct } from "../../store";
 
 class Products extends Component {
+  componentWillMount() {
+    this.props.getProducts();
+  }
+  deleteP = id => {
+    this.props.deleteProduct(id);
+  };
   render() {
+    console.log(this.props);
     return (
       <div id="products">
-        {products.map((product, idx) => {
+        {this.props.products.map((product, idx) => {
           let cName = "product-container";
           if (idx === products.length - 1) {
             cName += " last-product";
@@ -40,19 +25,35 @@ class Products extends Component {
             return (
               <section key={product.id} className={cName}>
                 <SingleProductImage imgURL={product.imgURL} idx={idx} />
-                <SingleProduct product={product} idx={idx} />
+                <SingleProduct
+                  product={product}
+                  idx={idx}
+                  deleteP={this.deleteP}
+                />
               </section>
             );
           } else {
             return (
               <section key={product.id} className={cName}>
-                <SingleProduct product={product} idx={idx} />
+                <SingleProduct
+                  product={product}
+                  idx={idx}
+                  deleteP={this.deleteP}
+                />
                 <SingleProductImage imgURL={product.imgURL} idx={idx} />
               </section>
             );
           }
         })}
         <div>
+          <p style={{ textAlign: "center" }}>
+            this will only be available through an admin
+          </p>
+          <h1 style={{ textAlign: "center" }}>
+            <Link to="/products/create" style={{ textDecoration: "none" }}>
+              Create Product
+            </Link>
+          </h1>
           <div className="find-button">
             <Link to="/buy" style={{ textDecoration: "none" }}>
               Find Dezo Near Me
@@ -68,4 +69,11 @@ class Products extends Component {
   }
 }
 
-export default Products;
+const mS = ({ products }) => ({ products });
+
+const mD = {
+  getProducts: getProducts,
+  deleteProduct: deleteProduct
+};
+
+export default connect(mS, mD)(Products);

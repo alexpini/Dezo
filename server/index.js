@@ -79,9 +79,8 @@ const startListening = () => {
 };
 
 const syncDb = () =>
-  db
-    // .sync({force:true})
-    .sync();
+  // db.sync({ force: true });
+  db.sync();
 
 async function bootApp() {
   await sessionStore.sync();
