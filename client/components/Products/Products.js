@@ -13,12 +13,11 @@ class Products extends Component {
     this.props.deleteProduct(id);
   };
   render() {
-    console.log(this.props);
     return (
       <div id="products">
         {this.props.products.map((product, idx) => {
           let cName = "product-container";
-          if (idx === products.length - 1) {
+          if (idx === this.props.products.length - 1) {
             cName += " last-product";
           }
           if (idx % 2 === 0) {
