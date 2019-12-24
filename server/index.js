@@ -78,9 +78,8 @@ const startListening = () => {
   app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`));
 };
 
-const syncDb = () =>
-  // db.sync({ force: true });
-  db.sync();
+const syncDb = () => db.sync({ force: true });
+// db.sync();
 
 async function bootApp() {
   await sessionStore.sync();
