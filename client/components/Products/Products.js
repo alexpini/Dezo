@@ -5,21 +5,63 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { getProducts, deleteProduct } from "../../store";
 
-class Products extends Component {
-  componentWillMount() {
-    this.props.getProducts();
+const products = [
+  {
+    id: 1,
+    imgURL: "../../assets/images/drink.jpeg",
+    description: [
+      "Coconut Water",
+      "Acai Berry",
+      "Himalayan Sea Salt",
+      "Gluten Free Vodka",
+      "Carbonation"
+    ],
+    color: "#ff99dd"
+  },
+  {
+    id: 2,
+    imgURL: "../../assets/images/drink.jpeg",
+    description: [
+      "Prickly Pear",
+      "Lemon",
+      "Himalayan Sea Salt",
+      "Gluten Free Vodka",
+      "Carbonation"
+    ],
+    color: "#ff5050"
+  },
+  {
+    id: 3,
+    imgURL: "../../assets/images/drink.jpeg",
+    description: [
+      "Watermelon Water",
+      "Cucumber & Lemon",
+      "Himalayan Sea Salt",
+      "Gluten Free Vodka",
+      "Carbonation"
+    ],
+    color: "#ffcc66"
   }
-  deleteP = id => {
-    this.props.deleteProduct(id);
+];
+
+class Products extends Component {
+  state = {
+    products: []
   };
+  componentWillMount() {
+    //if they ever want to add products
+    // this.props.getProducts();
+    this.setState({ products });
+  }
+  // deleteP = id => {
+  //   this.props.deleteProduct(id);
+  // };
   render() {
     return (
       <div id="products">
-        {this.props.products.map((product, idx) => {
+        {this.state.products.map((product, idx) => {
           let cName = "product-container";
-          if (idx === this.props.products.length - 1) {
-            cName += " last-product";
-          }
+
           if (idx % 2 === 0) {
             return (
               <section key={product.id} className={cName}>
@@ -27,7 +69,7 @@ class Products extends Component {
                 <SingleProduct
                   product={product}
                   idx={idx}
-                  deleteP={this.deleteP}
+                  // deleteP={this.deleteP}
                 />
               </section>
             );
@@ -37,7 +79,7 @@ class Products extends Component {
                 <SingleProduct
                   product={product}
                   idx={idx}
-                  deleteP={this.deleteP}
+                  // deleteP={this.deleteP}
                 />
                 <SingleProductImage imgURL={product.imgURL} idx={idx} />
               </section>
@@ -45,19 +87,6 @@ class Products extends Component {
           }
         })}
         <div>
-          <p style={{ textAlign: "center" }}>
-            this will only be available through an admin
-          </p>
-          <h1 style={{ textAlign: "center" }}>
-            <Link to="/products/create" style={{ textDecoration: "none" }}>
-              Create Product
-            </Link>
-          </h1>
-          <div className="find-button">
-            <Link to="/buy" style={{ textDecoration: "none" }}>
-              Find Dezo Near Me
-            </Link>
-          </div>
           <img
             className="product-full_image"
             src="https://theharrispoll.com/wp-content/uploads/2017/12/summer-drinking_banner.jpg"

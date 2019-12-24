@@ -20,6 +20,7 @@ class CreateProduct extends React.Component {
   render() {
     return (
       <form
+        ref={this.props.myRef}
         onSubmit={this.handleSubmit}
         style={{
           display: "flex",

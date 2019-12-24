@@ -1,11 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
 
-export default class WhereToBuy extends React.Component {
+class WhereToBuy extends React.Component {
   render() {
-    return (
-      <section>
-        <h1>Where To Buy</h1>
-      </section>
-    );
+    return <div style={{ paddingTop: "20rem" }}></div>;
   }
 }
+
+export default connect(null)(WhereToBuy);

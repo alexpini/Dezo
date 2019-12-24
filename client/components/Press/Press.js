@@ -18,7 +18,7 @@ export default class Press extends React.Component {
   }
   render() {
     return (
-      <section>
+      <div style={{ paddingTop: "15rem" }}>
         <h1 style={{ textAlign: "center" }}>Press</h1>
         <div className="press-container">
           {this.state.press.map((p, idx) => {
@@ -31,7 +31,7 @@ export default class Press extends React.Component {
             );
           })}
         </div>
-      </section>
+      </div>
     );
   }
 }

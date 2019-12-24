@@ -27,14 +27,6 @@ const User = db.define("user", {
   lName: {
     type: Sequelize.STRING
   },
-  // will add later
-  // code: {
-  //   type: Sequelize.STRING,
-  //   allowNull: false,
-  //   get() {
-  //     return () => this.getDataValue("code");
-  //   }
-  // },
   password: {
     type: Sequelize.STRING,
     // Making `.password` act like a func hides it when serializing to JSON.
@@ -70,14 +62,13 @@ User.generateSalt = function() {
   return crypto.randomBytes(16).toString("base64");
 };
 
-// User.getCode = function(code) {
-//   //TODO code entered by user is checked here, then i should erase it i think, might be done on server side
-//   if (code === "acg1124-petyyh-qwwrte-1125tdr") {
-//     return "success";
-//   } else {
-//     return "failed";
-//   }
-// };
+User.getCode = function(code) {
+  if (code === "acg1124-petyyh-qwwrte-1125tdr") {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 User.encryptPassword = function(plainText, salt) {
   return crypto
