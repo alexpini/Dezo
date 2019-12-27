@@ -8,6 +8,7 @@ import { Page2 } from "./Page2";
 import { Page3 } from "./Page3";
 import { PictureGrid } from "./PictureGrid";
 
+
 class About extends React.Component {
   render() {
     return (
@@ -16,8 +17,15 @@ class About extends React.Component {
         <section className="about-container">
           <img src="../../assets/images/drinks.jpeg" width="100%" />
         </section>
+        {/* <section id='about-slogan' onClick={this.scrollToRef}>
+          <div>
+            <h2 id=''>
+              The World's Most Vitalizing Spiked Fruit Water
+            </h2>
+          </div>
+        </section> */}
         {/* not sure if you want this here for the scroll thingy
-            if you do, we could just import a bunch of components 
+            if you do, we could just import a bunch of components
             here and they will display in order or whatever */}
         <Page2 />
 
