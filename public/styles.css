@@ -1,11 +1,22 @@
+
 body {
   margin: 0;
   margin-top: 0;
   padding: 0;
+  font-family: 'impact';
 }
 html {
   padding: 0;
   margin: 0;
+}
+
+p {
+  font-family: 'courier';
+  font-size: 1rem;
+}
+#enter {
+  padding: 2rem;
+  color: #eb793c;
 }
 
 .modal {
@@ -23,18 +34,27 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-content: flex-start;
-  background-image: url("./assets/images/forest.jpeg");
+  /* background-image: url("./assets/images/forest.jpeg"); */
   align-items: center;
   position: fixed;
   text-align: center;
   /* background: lightblue; */
   width: 100%;
   height: 100%;
-  padding-bottom: 1rem;
+  padding-bottom: 25rem;
   border-radius: 1rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* .about-container {
+  background-image: url("./assets/images/forest.jpeg");
+} */
+
+#about-text {
+  text-align: center;
+  color: #eb793c;
 }
 .display-block {
   display: block;
@@ -48,10 +68,23 @@ html {
 
 .inputs {
   text-align: center;
+  background-color: white;
+  border :#eb793c 1px solid;
+  padding: 1rem;
+  margin: .5rem;
 }
 
 .inputs::placeholder {
   text-align: center;
+  font-family: 'impact';
+}
+
+button {
+  font-family: 'impact';
+  background-color: #eb793c;
+  border: 1px #eb793c solid;
+  margin: .5rem;
+  color: #fff;
 }
 
 .modal-top {
@@ -78,8 +111,8 @@ html {
   flex-direction: column;
   justify-content: center;
   flex: 1;
-  background-color: dodgerblue;
-  max-height: 13rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 1.5rem;
 }
 
 .modal-bottom > p {
@@ -202,7 +235,7 @@ html {
   position: absolute;
   z-index: 99;
   background-color: white;
-  color: orange;
+  color: #eb793c;
   width: 15rem;
   height: 3rem;
   border-radius: 1.5rem;
@@ -228,4 +261,7 @@ html {
   padding-top: 12rem;
   margin: auto;
   width: 85vw;
+}
+.connect {
+  margin: 10rem;
 }
