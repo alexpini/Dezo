@@ -3,6 +3,7 @@ import Products from "../Products/Products";
 import ConnectWith from "../Connect/ConnectWIth";
 import Press from "../Press/Press";
 
+
 class About extends React.Component {
   constructor() {
     super();
@@ -27,8 +28,15 @@ class About extends React.Component {
             </span>
           </div>
         </section>
+        {/* <section id='about-slogan' onClick={this.scrollToRef}>
+          <div>
+            <h2 id=''>
+              The World's Most Vitalizing Spiked Fruit Water
+            </h2>
+          </div>
+        </section> */}
         {/* not sure if you want this here for the scroll thingy
-            if you do, we could just import a bunch of components 
+            if you do, we could just import a bunch of components
             here and they will display in order or whatever */}
         <Products />
         <Press />
