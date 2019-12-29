@@ -11,9 +11,9 @@ export const SingleProduct = ({ product, idx, deleteP }) => {
   }
   return (
     <div className={cName}>
-      {product.description.map(p => {
+      {product.description.map((p, idx) => {
         return (
-          <div key={p.id} style={{ color: `${product.color}` }}>
+          <div key={idx} style={{ color: `${product.color}` }}>
             {p}
           </div>
         );
