@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Routes from "./Routes";
 import { TwentyOne } from "./Modals/TwentyOne";
 import { Redirect } from "react-router-dom";
-import Footer from "./Footer";
+import Footer from "./Footer"
 
 class App extends React.Component {
   constructor() {
@@ -19,42 +19,32 @@ class App extends React.Component {
     };
   }
   scrollToRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
-  submitAge = (e, show) => {
-    console.log(show);
+  submitAge = e => {
     e.preventDefault();
-    this.setState({ show: !show });
-    if (!show) {
+    //regex to check for letters/special chars
+    let numbers = /^[0-9]+$/;
+    let { month, day, year } = this.state;
+    if (!month.match(numbers) || !day.match(numbers) || !year.match(numbers)) {
+      this.setState({ error: "not valid date" });
+      return;
+    }
+
+    // - 1 because of 0 indexing
+    month = Number(month) - 1;
+    day = Number(day);
+    year = Number(year);
+    let dateToCheck = new Date(year, month, day);
+    let dateNow = Date.now() - dateToCheck.getTime();
+    let diff = new Date(dateNow);
+    let yearDiff = Math.abs(diff.getFullYear() - 1970);
+
+    if (yearDiff < 21) {
       this.setState({ error: "You are not 21" });
       return;
     } else {
+      this.setState({ show: false, error: "" });
       localStorage.setItem("+21", "true");
-      this.setState({ error: "" });
     }
-
-    // //regex to check for letters/special chars
-    // let numbers = /^[0-9]+$/;
-    // let { month, day, year } = this.state;
-    // if (!month.match(numbers) || !day.match(numbers) || !year.match(numbers)) {
-    //   this.setState({ error: "not valid date" });
-    //   return;
-    // }
-
-    // - 1 because of 0 indexing
-    // month = Number(month) - 1;
-    // day = Number(day);
-    // year = Number(year);
-    // let dateToCheck = new Date(year, month, day);
-    // let dateNow = Date.now() - dateToCheck.getTime();
-    // let diff = new Date(dateNow);
-    // let yearDiff = Math.abs(diff.getFullYear() - 1970);
-
-    // if (yearDiff < 21) {
-    //   this.setState({ error: "You are not 21" });
-    //   return;
-    // } else {
-    //   this.setState({ show: false, error: "" });
-    //   localStorage.setItem("+21", "true");
-    // }
   };
 
   handleChange = async e => {
