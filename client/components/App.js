@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Routes from "./Routes";
 import { TwentyOne } from "./Modals/TwentyOne";
 import { Redirect } from "react-router-dom";
-import Footer from "./Footer"
+import Footer from "./Footer";
 
 class App extends React.Component {
   constructor() {
@@ -91,3 +91,41 @@ class App extends React.Component {
 }
 
 export default App;
+/*
+import * as RNFS from 'react-native-fs';
+import {moduleData} from '../assets/moduleSettings';
+import AppDelegate from './AppDelegate';
+
+class ModuleControl {
+  constructor() {
+    this.settings = [];
+    this.retrieved = false;
+  }
+  fetchFile = async () => {
+    try {
+      // if (RNFS.exists(`${RNFS.DocumentDirectoryPath}/moduleSettings.json`)) {
+      //   await RNFS.writeFile(
+      //     `${RNFS.DocumentDirectoryPath}/moduleSettings.json`,
+      //     JSON.stringify(d),
+      //     'utf8',
+      //   );
+      //   const data = await RNFS.readFile(
+      //     `${RNFS.DocumentDirectoryPath}/moduleSettings.json`,
+      //     'utf8',
+      //   );
+      //   console.log('MY DATA: ', data);
+      //   if (data) {
+      //     this.settings = JSON.parse(data);
+      //     console.log('MODULAR SETTINGS: ', this.settings);
+      //   }
+      // }
+    } catch (e) {
+      console.log('FIRST ERROR IN MODULECONTROL: ', e);
+    }
+  };
+}
+
+export default ModuleControl;
+
+
+*/
