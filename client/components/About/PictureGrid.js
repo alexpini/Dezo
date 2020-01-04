@@ -12,6 +12,7 @@ const images = [
 export const PictureGrid = props => {
   return (
     <div id="imageContainer">
+
       {images.map((i, idx) => {
         return <img key={idx} src={`${i}`} />;
       })}
