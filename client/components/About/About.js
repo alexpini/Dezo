@@ -1,21 +1,21 @@
 import React from "react";
 import Products from "../Products/Products";
 // import ConnectWith from "../Connect/ConnectWIth";
-// import Press from "../Press/Press";
 import { Link } from "react-router-dom";
 // import CreateProduct from "../Products/CreateProduct";
 import { Page2 } from "./Page2";
 import { Page3 } from "./Page3";
+// import { Press } from "../Press/Press";
 import { PictureGrid } from "./PictureGrid";
 
 
 class About extends React.Component {
   render() {
     return (
-      <div>
+      <div className="parallax">
         {/* <div onClick={() => this.myRef.current.scrollIntoView(false)}> */}
         <section className="about-container">
-          <img src="../../assets/images/drinks.jpeg" width="100%" />
+          {/* <img src="../../assets/images/landing-photo.png" width="100%" /> */}
         </section>
         {/* <section id='about-slogan' onClick={this.scrollToRef}>
           <div>
@@ -30,17 +30,11 @@ class About extends React.Component {
         <Page2 />
 
         <Page3 />
-        <div id="prod-cont">
-          <h1
-            style={{
-              textAlign: "center",
-              textTransform: "uppercase",
-              fontSize: "3rem",
-              marginBottom: "-4vh"
-            }}
-          >
-            Dezo Flavors
-          </h1>
+        <section className="about-container-2">
+
+        </section>
+        <div>
+
           <Products />
         </div>
         {/* <CreateProduct myRef={this.myRef} /> */}
@@ -57,14 +51,21 @@ class About extends React.Component {
               Find Dezo
             </Link>
           </div>
-          <img src="../../assets/images/map.png" width="70%" />
+          {/* <img src="../../assets/images/map.png" width="70%" /> */}
         </div>
+        <section className="about-container-3">
+
+        </section>
         <h1
+          id="instagram"
           style={{
             textAlign: "center",
             textTransform: "uppercase",
             fontSize: "4rem",
-            color: "#008080"
+            color: "#008080",
+            margin: "0",
+            padding: "5rem",
+            backgroundColor: "white"
           }}
         >
           Follow us on IG{" "}
@@ -77,14 +78,17 @@ class About extends React.Component {
           </a>
         </h1>
         <div
+          id="instagram"
           style={{
             display: "flex",
             justifyContent: "center"
           }}
         >
+
           <section
             style={{ display: "flex", width: "90vw", paddingBottom: "10vh" }}
           >
+
             <PictureGrid />
           </section>
         </div>

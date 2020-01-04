@@ -18,7 +18,7 @@ export default class Press extends React.Component {
   }
   render() {
     return (
-      <div style={{ paddingTop: "15rem" }}>
+      <div id="press" style={{ padding: "15rem" }}>
         <h1 style={{ textAlign: "center" }}>Press</h1>
         <div className="press-container">
           {this.state.press.map((p, idx) => {

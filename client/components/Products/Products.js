@@ -8,7 +8,7 @@ import { getProducts, deleteProduct } from "../../store";
 const products = [
   {
     id: 1,
-    imgURL: "../../assets/images/drink.jpeg",
+    imgURL: "../../assets/images/coconut-water.png",
     description: [
       "Coconut Water",
       "Acai Berry",
@@ -20,7 +20,7 @@ const products = [
   },
   {
     id: 2,
-    imgURL: "../../assets/images/drink.jpeg",
+    imgURL: "../../assets/images/cactus-water.png",
     description: [
       "Prickly Pear",
       "Lemon",
@@ -32,7 +32,7 @@ const products = [
   },
   {
     id: 3,
-    imgURL: "../../assets/images/drink.jpeg",
+    imgURL: "../../assets/images/watermelon-water.png",
     description: [
       "Watermelon Water",
       "Cucumber & Lemon",
@@ -60,6 +60,16 @@ class Products extends Component {
     return (
       <section>
         <div id="products">
+        <h1 id="product"
+            style={{
+              textAlign: "center",
+              textTransform: "uppercase",
+              fontSize: "3rem",
+              marginTop: "-4vh"
+            }}
+          >
+
+          </h1>
           {this.state.products.map((product, idx) => {
             let cName = "product-container";
 
@@ -87,12 +97,12 @@ class Products extends Component {
               );
             }
           })}
-          <div>
+          {/* <div>
             <img
               className="product-full_image"
               src="https://theharrispoll.com/wp-content/uploads/2017/12/summer-drinking_banner.jpg"
             />
-          </div>
+          </div> */}
         </div>
       </section>
     );

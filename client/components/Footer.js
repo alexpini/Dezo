@@ -8,9 +8,9 @@ export default class Footer extends React.Component {
       <div className="footer">
         <div className="footer-subcontainer">
           <img
-            src="../../assets/images/"
+            src="../../assets/images/dezo-logo.png"
             alt="logo"
-            style={{ border: "1px solid black", width: "10vw", height: "10vw" }}
+            style={{ width: "10vw", height: "10vw" }}
           />
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <Link
@@ -54,7 +54,6 @@ export default class Footer extends React.Component {
               Contact
             </Link>
           </div>
-          <div></div>
         </div>
       </div>
     );

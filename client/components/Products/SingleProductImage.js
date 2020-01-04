@@ -5,7 +5,7 @@ export const SingleProductImage = ({ imgURL, idx }) => {
   cName += " first-product";
   return (
     <div className={cName}>
-      <img src={imgURL} height="200px" width="200px" />
+      <img src={imgURL} height="100px" width="100px" />
     </div>
   );
 };

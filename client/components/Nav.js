@@ -1,66 +1,73 @@
 import React, { Component } from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import { HashLink as Link, Redirect } from "react-router-hash-link";
+
+//links solid orange and webkit enlarge when hovered
 
 class Nav extends Component {
   render() {
     return (
       <nav className="navbar">
         <span className="logo"></span>
-        <NavLink
+        <Link
           to="/about"
-          activeClassName="active"
+          activeclassname="active"
+          className="nav-links"
           style={{
             textDecoration: "none",
-            color: "#00e6b8",
+            color: "transparent",
             fontWeight: "bolder"
           }}
         >
-          About Dezo
-        </NavLink>
-        <NavLink
-          to="/products"
-          activeClassName="active"
+          About
+        </Link>
+        <Link
+          to="/about#product"
+          className="nav-links"
+          activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "#00e6b8",
+            color: "transparent;",
             fontWeight: "bolder"
           }}
         >
           Products
-        </NavLink>
-        <NavLink
+        </Link>
+        <Link
           to="/press"
-          activeClassName="active"
+          className="nav-links"
+          activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "#00e6b8",
+            color: "transparent",
             fontWeight: "bolder"
           }}
         >
           Press
-        </NavLink>
-        <NavLink
+        </Link>
+        <Link
           to="/contact"
-          activeClassName="active"
+          className="nav-links"
+          activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "#00e6b8",
+            color: "transparent",
             fontWeight: "bolder"
           }}
         >
           Contact
-        </NavLink>
-        <NavLink
+        </Link>
+        <Link
           to="/buy"
-          activeClassName="active"
+          className="nav-links"
+          activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "#00e6b8",
+            color: "transparent",
             fontWeight: "bolder"
           }}
         >
           Find Dezo
-        </NavLink>
+        </Link>
       </nav>
     );
   }
