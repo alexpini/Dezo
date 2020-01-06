@@ -512,3 +512,13 @@ button {
   font-size: 6rem;
   padding-bottom: 5rem;
 }
+.form {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+}
