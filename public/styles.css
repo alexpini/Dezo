@@ -125,12 +125,12 @@ p {
 }
 
 .about-container-2 {
-  height: 50vh;
+  /* height: 50vh; */
   width: 100vw;
 }
 
 .about-container-3 {
-  height: 60vh;
+  /* height: 60vh; */
   width: 100vw;
 }
 
@@ -203,6 +203,7 @@ button {
   width: 100vw;
   z-index: 100;
   border-radius: 0 !important;
+  border-bottom: 1px solid black;
 }
 
 .nav-links {
