@@ -96,8 +96,8 @@ const syncDb = async () => {
       password: "1"
     }
   });
-  db.sync({ force: true });
-  // db.sync();
+  // db.sync({ force: true });
+  db.sync();
 };
 
 async function bootApp() {
