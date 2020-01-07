@@ -86,7 +86,8 @@ p {
 }
 
 #enter {
-  /* padding: 2rem; */
+  padding: 2rem;
+  zindex: -1;
   color: #eb793c;
 }
 
@@ -287,7 +288,7 @@ button {
   background-attachment: fixed;
   background-size: auto;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
   min-height: 100vh;
 }
 
