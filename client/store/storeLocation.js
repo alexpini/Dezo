@@ -19,7 +19,7 @@ export const createStoreLocation = payload => async dispatch => {
 };
 
 export const delStore = id => async dispatch => {
-  const { data } = await axios.delete(`/api/stores/${id}`);
+  await axios.delete(`/api/stores/${id}`);
   dispatch(deleteStore(id));
 };
 

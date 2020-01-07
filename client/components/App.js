@@ -51,7 +51,6 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    console.log(location.pathname);
     //checks if this has been set. msotly for refresh
     if (localStorage.getItem("+21")) {
       this.setState({ show: false });

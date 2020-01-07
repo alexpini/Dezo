@@ -63,7 +63,7 @@ User.generateSalt = function() {
 };
 
 User.getCode = function(code) {
-  if (code === "acg1124-petyyh-qwwrte-1125tdr") {
+  if (code === "acg1124awss-petyyh-qwwrte-1125tdrssas") {
     return true;
   } else {
     return false;

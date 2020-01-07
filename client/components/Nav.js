@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { HashLink as Link, Redirect } from "react-router-hash-link";
+import store, { me, logout } from "../store";
+import { connect } from "react-redux";
 
 //links solid orange and webkit enlarge when hovered
 
 class Nav extends Component {
+  async componentDidMount() {
+    await this.props.me();
+  }
+
   render() {
+    const { user } = this.props;
     return (
       <nav className="navbar">
         <span className="logo"></span>
@@ -26,7 +33,7 @@ class Nav extends Component {
           activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "transparent;",
+            color: "transparent",
             fontWeight: "bolder"
           }}
         >
@@ -68,9 +75,43 @@ class Nav extends Component {
         >
           Find Dezo
         </Link>
+        {user.email ? (
+          <a
+            onClick={() => this.props.logout()}
+            href="#"
+            className="nav-links"
+            style={{
+              textDecoration: "none",
+              color: "transparent",
+              fontWeight: "bolder"
+            }}
+          >
+            Logout
+          </a>
+        ) : (
+          <Link
+            to="/dezo/admin"
+            className="nav-links"
+            activeclassname="active"
+            style={{
+              textDecoration: "none",
+              color: "transparent",
+              fontWeight: "bolder"
+            }}
+          >
+            SignUp/Login
+          </Link>
+        )}
       </nav>
     );
   }
 }
 
-export default Nav;
+const mS = ({ user }) => ({ user });
+
+const mD = {
+  me,
+  logout
+};
+
+export default connect(mS, mD)(Nav);

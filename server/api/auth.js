@@ -26,20 +26,16 @@ router.post("/signup", async (req, res, next) => {
     if (code) {
       isAdmin = await User.getCode(code);
     }
-    if (!isAdmin) {
-      res.json({ message: "You are not allowed to be here" });
-    } else {
-      const user = await User.findOrCreate({
-        where: { email: req.body.obj.email },
-        defaults: {
-          password: req.body.obj.password,
-          fName: req.body.obj.fName,
-          lName: req.body.obj.lName,
-          isAdmin
-        }
-      });
-      req.login(user[0], err => (err ? next(err) : res.json(user[0])));
-    }
+    const user = await User.findOrCreate({
+      where: { email: req.body.obj.email },
+      defaults: {
+        password: req.body.obj.password,
+        fName: req.body.obj.fName,
+        lName: req.body.obj.lName,
+        isAdmin
+      }
+    });
+    req.login(user[0], err => (err ? next(err) : res.json(user[0])));
   } catch (err) {
     if (err.name === "SequelizeUniqueConstraintError") {
       res.status(401).send("User already exists");
@@ -49,9 +45,23 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
+router.get("/me", async (req, res, next) => {
+  try {
+    if (!req.user) {
+      res.json(0);
+    } else {
+      const user = await User.findByPk(req.user.id);
+      res.json(user);
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
 router.post("/logout", (req, res) => {
   req.logout();
   req.session.destroy();
+  res.redirect("/");
 });
 
 router.get("/me", (req, res) => {

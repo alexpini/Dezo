@@ -12,7 +12,8 @@ class AuthForm extends React.Component {
     super();
     this.state = {
       pwCheck: false,
-      error: ""
+      error: "",
+      login: "Login"
     };
   }
 
@@ -26,7 +27,7 @@ class AuthForm extends React.Component {
     e.preventDefault();
     if (
       this.state.password !== this.state.passwordCheck &&
-      this.props.name === "signup"
+      this.state.login === false
     ) {
       this.setState({ error: "passwords don't match" });
     } else {
@@ -34,7 +35,8 @@ class AuthForm extends React.Component {
         email: this.state.email.toLowerCase()
       });
       try {
-        await store.dispatch(auth(this.state, this.props.name));
+        const name = this.state.login === "Login" ? "login" : "signup";
+        await store.dispatch(auth(this.state, name));
         if (!this.props.user.id) {
           this.setState({ error: "No user" });
         } else {
@@ -47,7 +49,7 @@ class AuthForm extends React.Component {
   };
 
   render() {
-    const { name, displayName, error } = this.props;
+    const { name, displayName, user } = this.props;
 
     return (
       <div
@@ -63,75 +65,101 @@ class AuthForm extends React.Component {
           marginRight: "auto"
         }}
       >
+        <div
+          style={{ textAlign: "center" }}
+          onClick={() =>
+            this.setState({
+              login: this.state.login === "Login" ? "Signup" : "Login"
+            })
+          }
+        >
+          {this.state.login === "Login" ? "Login" : "SignUp"}
+        </div>
         <form name={name} className="home-body form" autoComplete="off">
-          <div>
-            <label htmlFor="email">
-              <small>Email</small>
-            </label>
-            <input name="email" type="text" onChange={this.handleChange} />
-            <label htmlFor="password">
-              <small>Password</small>
-            </label>
-            <input
-              onFocus={() => this.setState({ error: "" })}
-              name="password"
-              type="password"
-              onChange={this.handleChange}
-            />
-            {/* {name === "login" && <Link to="/reset">Forgot Password?</Link>} */}
-            {name === "signup" && (
-              <div>
-                <label htmlFor="passwordChecker">
-                  <small>Re-Type Password</small>
-                </label>
-                <input
-                  onFocus={() => this.setState({ error: "" })}
-                  name="passwordCheck"
-                  type="password"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <label htmlFor="fName">
-                  <small>First Name</small>
-                </label>
-                <input
-                  name="fName"
-                  type="text"
-                  placeholder="first name"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <label htmlFor="lName">
-                  <small>Last Name</small>
-                </label>
-                <input
-                  name="lName"
-                  type="text"
-                  placeholder="last name"
-                  onChange={this.handleChange}
-                />
-                <br />
-                <label htmlFor="Secret Code">
-                  <small>Code</small>
-                </label>
-                <input
-                  name="code"
-                  type="text"
-                  placeholder="code"
-                  onChange={this.handleChange}
-                />
-              </div>
-            )}
-            {this.state.error !== null && <div>{this.state.error}</div>}
-            {error && error.response && <div> {error.response.data} </div>}
-            <div
-              onClick={this.handleSubmit}
-              className="choice types"
-              style={{ marginTop: 0, color: "#B8B8B3" }}
-              disabled={this.state.pwCheck}
-            >
-              {displayName}
+          {this.state.login === "Login" ? (
+            <div>
+              <label htmlFor="email">
+                <small>Email</small>
+              </label>
+              <input name="email" type="text" onChange={this.handleChange} />
+              <label htmlFor="password">
+                <small>Password</small>
+              </label>
+              <input
+                onFocus={() => this.setState({ error: "" })}
+                name="password"
+                type="password"
+                onChange={this.handleChange}
+              />
             </div>
+          ) : (
+            <div>
+              <label htmlFor="email">
+                <small>Email</small>
+              </label>
+              <input name="email" type="text" onChange={this.handleChange} />
+              <label htmlFor="password">
+                <small>Password</small>
+              </label>
+              <input
+                onFocus={() => this.setState({ error: "" })}
+                name="password"
+                type="password"
+                onChange={this.handleChange}
+              />
+              <label htmlFor="passwordChecker">
+                <small>Re-Type Password</small>
+              </label>
+              <input
+                onFocus={() => this.setState({ error: "" })}
+                name="passwordCheck"
+                type="password"
+                onChange={this.handleChange}
+              />
+              <br />
+              <label htmlFor="fName">
+                <small>First Name</small>
+              </label>
+              <input
+                name="fName"
+                type="text"
+                placeholder="first name"
+                onChange={this.handleChange}
+              />
+              <br />
+              <label htmlFor="lName">
+                <small>Last Name</small>
+              </label>
+              <input
+                name="lName"
+                type="text"
+                placeholder="last name"
+                onChange={this.handleChange}
+              />
+              <br />
+              <label htmlFor="Secret Code">
+                <small>Code</small>
+              </label>
+              <input
+                name="code"
+                type="text"
+                placeholder="code"
+                onChange={this.handleChange}
+              />
+            </div>
+          )}
+
+          {this.state.error !== null && <div>{this.state.error}</div>}
+          {user.error && user.error.response && (
+            <div> {user.error.response.data} </div>
+          )}
+          <div
+            onClick={this.handleSubmit}
+            className="choice types"
+            style={{ marginTop: 0, color: "#B8B8B3" }}
+            disabled={this.state.pwCheck}
+          >
+            {this.state.login === "Login" ? "Login" : "SignUp"}
           </div>
         </form>
       </div>
@@ -146,32 +174,16 @@ class AuthForm extends React.Component {
  *   function, and share the same Component. This is a good example of how we
  *   can stay DRY with interfaces that are very similar to each other!
  */
-const mapLogin = state => {
-  return {
-    name: "login",
-    displayName: "Login",
-    error: state.user.error,
-    user: state.user
-  };
-};
+const mS = ({ user }) => ({ user });
 
-const mapSignup = state => {
-  return {
-    name: "signup",
-    displayName: "Sign Up",
-    error: state.user.error,
-    user: state.user
-  };
-};
-
-export const Login = connect(mapLogin)(AuthForm);
-export const Signup = connect(mapSignup)(AuthForm);
-
+// export const Login = connect(mapLogin)(AuthForm);
+// export const Signup = connect(mapSignup)(AuthForm);
+export default connect(mS)(AuthForm);
 /**
  * PROP TYPES
  */
-AuthForm.propTypes = {
-  name: PropTypes.string.isRequired,
-  displayName: PropTypes.string.isRequired,
-  error: PropTypes.object
-};
+// AuthForm.propTypes = {
+//   // name: PropTypes.string.isRequired,
+//   // displayName: PropTypes.string.isRequired,
+//   error: PropTypes.object
+// };

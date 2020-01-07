@@ -121,14 +121,17 @@ p {
 
 .about-container {
   height: 100vh;
+  width: 100vw;
 }
 
 .about-container-2 {
   height: 50vh;
+  width: 100vw;
 }
 
 .about-container-3 {
   height: 60vh;
+  width: 100vw;
 }
 
 #about-text {
@@ -197,7 +200,7 @@ button {
   font-size: 1.5rem;
   background-color: #fff;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 100;
   border-radius: 0 !important;
 }
@@ -281,10 +284,10 @@ button {
 .parallax {
   background-image: url("./assets/images/forest-water.jpg");
   background-attachment: fixed;
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 500px;
+  min-height: 100vh;
 }
 
 .about-container {
@@ -514,6 +517,7 @@ button {
 }
 .form {
   display: flex;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px) {
