@@ -86,7 +86,7 @@ p {
 }
 
 #enter {
-  padding: 2rem;
+  /* padding: 2rem; */
   color: #eb793c;
 }
 
@@ -372,6 +372,7 @@ button {
   height: 100vh;
   margin-bottom: 50vh;
   background-color: transparent;
+  opacity: 1;
 }
 
 .about-part_2-div {

@@ -8,15 +8,14 @@ import { Page3 } from "./Page3";
 // import { Press } from "../Press/Press";
 import { PictureGrid } from "./PictureGrid";
 
-
 class About extends React.Component {
   render() {
     return (
       <div className="parallax">
         {/* <div onClick={() => this.myRef.current.scrollIntoView(false)}> */}
-        <section className="about-container">
-          {/* <img src="../../assets/images/landing-photo.png" width="100%" /> */}
-        </section>
+        {/* <section className="about-container"> */}
+        {/* <img src="../../assets/images/landing-photo.png" width="100%" /> */}
+        {/* </section> */}
         {/* <section id='about-slogan' onClick={this.scrollToRef}>
           <div>
             <h2 id=''>
@@ -30,11 +29,8 @@ class About extends React.Component {
         <Page2 />
 
         <Page3 />
-        <section className="about-container-2">
-
-        </section>
+        {/* <section className="about-container-2"></section> */}
         <div>
-
           <Products />
         </div>
         {/* <CreateProduct myRef={this.myRef} /> */}
@@ -53,9 +49,7 @@ class About extends React.Component {
           </div>
           {/* <img src="../../assets/images/map.png" width="70%" /> */}
         </div>
-        <section className="about-container-3">
-
-        </section>
+        <section className="about-container-3"></section>
         <h1
           id="instagram"
           style={{
@@ -84,11 +78,9 @@ class About extends React.Component {
             justifyContent: "center"
           }}
         >
-
           <section
             style={{ display: "flex", width: "90vw", paddingBottom: "10vh" }}
           >
-
             <PictureGrid />
           </section>
         </div>
