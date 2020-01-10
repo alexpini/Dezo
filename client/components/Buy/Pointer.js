@@ -1,11 +1,14 @@
 import React from "react";
 
-export const Pointer = ({ name, position }) => {
+export const Pointer = props => {
+  const { store } = props;
   return (
     <div>
-      <div>{name}</div>
-      <div>{position.lat}</div>
-      <div>{position.lng}</div>
+      <div>{store.name}</div>
+      <div>{store.address1}</div>
+      <div>{store.city}</div>
+      <div>{store.state}</div>
+      <div>{store.zip}</div>
       <img src={"../../assets/images/dezo-logo.png"} width="30" height="30" />
     </div>
   );
