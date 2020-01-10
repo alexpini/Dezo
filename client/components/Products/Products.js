@@ -48,7 +48,7 @@ class Products extends Component {
   state = {
     products: []
   };
-  componentWillMount() {
+  componentDidMount() {
     //if they ever want to add products
     // this.props.getProducts();
     this.setState({ products });
@@ -60,16 +60,15 @@ class Products extends Component {
     return (
       <section>
         <div id="products">
-        <h1 id="product"
+          <h1
+            id="product"
             style={{
               textAlign: "center",
               textTransform: "uppercase",
               fontSize: "3rem",
               marginTop: "-4vh"
             }}
-          >
-
-          </h1>
+          ></h1>
           {this.state.products.map((product, idx) => {
             let cName = "product-container";
 

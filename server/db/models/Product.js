@@ -10,12 +10,10 @@ const id = {
 const Product = db.define("product", {
   id: id,
   name: {
-    type: Sequelize.STRING,
-    allowNull: false
+    type: Sequelize.STRING
   },
   description: {
     type: Sequelize.TEXT,
-    allowNull: false,
     defaultValue: "This drink will blow your mind"
   },
   link: {

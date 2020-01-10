@@ -1,4 +1,3 @@
-
 import axios from "axios";
 
 /**
@@ -32,6 +31,7 @@ export const me = () => async dispatch => {
 
 export const auth = (obj, method) => async dispatch => {
   let res;
+
   try {
     res = await axios.post(`/api/auth/${method}`, {
       obj
@@ -49,7 +49,7 @@ export const auth = (obj, method) => async dispatch => {
 
 export const logout = () => async dispatch => {
   try {
-    await axios.post("/auth/logout");
+    await axios.post("/api/auth/logout");
     dispatch(removeUser());
   } catch (err) {
     console.error(err);

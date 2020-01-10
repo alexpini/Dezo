@@ -15,9 +15,6 @@ const Store = db.define("store", {
   address1: {
     type: Sequelize.STRING
   },
-  address2: {
-    type: Sequelize.STRING
-  },
   city: {
     type: Sequelize.STRING
   },
@@ -26,7 +23,38 @@ const Store = db.define("store", {
   },
   zip: {
     type: Sequelize.STRING
+  },
+  lat: {
+    type: Sequelize.FLOAT
+  },
+  lng: {
+    type: Sequelize.FLOAT
   }
 });
+
+Store.geo = async function(address1, city, state, zip, googleMapsClient) {
+  const oldLocation = await this.findOne({
+    where: {
+      address1,
+      city,
+      state,
+      zip
+    },
+    attributes: ["lat", "lng"]
+  });
+  if (oldLocation) {
+    return {
+      lat: oldLocation.lat,
+      lng: oldLocation.lng
+    };
+  } else {
+    const location = await googleMapsClient
+      .geocode({
+        address: `${address1}, ${city}, ${state} ${zip}`
+      })
+      .asPromise();
+    return location.json.results[0].geometry.location;
+  }
+};
 
 module.exports = Store;
