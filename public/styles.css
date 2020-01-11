@@ -224,7 +224,7 @@ button {
   height: 3rem;
   width: 10rem;
   content: "";
-  /* background-image: url("./assets/images/dezo-logo.png"); */
+  background-image: "url('./assets/images/dezo-logo.png')";
   background-repeat: no-repeat;
 }
 
@@ -284,12 +284,11 @@ button {
 }
 
 .parallax {
-  /* background-image: url("./assets/images/forest-water.jpg"); */
   background-attachment: fixed;
   background-size: auto;
   background-repeat: no-repeat;
-  background-position: top;
-  min-height: 100vh;
+  background-position: center;
+  min-height: 100%;
 }
 
 .about-container {

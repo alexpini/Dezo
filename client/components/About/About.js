@@ -11,7 +11,12 @@ import { PictureGrid } from "./PictureGrid";
 class About extends React.Component {
   render() {
     return (
-      <div className="parallax">
+      <div
+        className="parallax"
+        style={{
+          backgroundImage: "url(../../assets/images/forest-water.jpg)"
+        }}
+      >
         {/* <div onClick={() => this.myRef.current.scrollIntoView(false)}> */}
         {/* <section className="about-container"> */}
         {/* <img src="../../assets/images/landing-photo.png" width="100%" /> */}
