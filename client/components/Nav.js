@@ -13,7 +13,7 @@ class Nav extends Component {
   render() {
     const { user } = this.props;
     return (
-      <nav className="navbar">
+      <nav className="navbar navbar-expand-lg">
         <span className="logo"></span>
         <Link
           to="/about"
@@ -21,7 +21,7 @@ class Nav extends Component {
           className="nav-links"
           style={{
             textDecoration: "none",
-            color: "transparent",
+            color: "#fff",
             fontWeight: "bolder"
           }}
         >
@@ -33,7 +33,7 @@ class Nav extends Component {
           activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "transparent",
+            color: "#fff",
             fontWeight: "bolder"
           }}
         >
@@ -45,7 +45,7 @@ class Nav extends Component {
           activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "transparent",
+            color: "#fff",
             fontWeight: "bolder"
           }}
         >
@@ -57,7 +57,7 @@ class Nav extends Component {
           activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "transparent",
+            color: "#fff",
             fontWeight: "bolder"
           }}
         >
@@ -69,7 +69,7 @@ class Nav extends Component {
           activeclassname="active"
           style={{
             textDecoration: "none",
-            color: "transparent",
+            color: "#fff",
             fontWeight: "bolder"
           }}
         >
@@ -82,7 +82,7 @@ class Nav extends Component {
             className="nav-links"
             style={{
               textDecoration: "none",
-              color: "transparent",
+              color: "#fff",
               fontWeight: "bolder"
             }}
           >
@@ -95,13 +95,14 @@ class Nav extends Component {
             activeclassname="active"
             style={{
               textDecoration: "none",
-              color: "transparent",
+              color: "#fff",
               fontWeight: "bolder"
             }}
           >
             SignUp/Login
           </Link>
         )}
+        <div className="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span className="icon-bar"></span><span className="icon-bar"></span><span className="icon-bar"></span></a></div>
       </nav>
     );
   }

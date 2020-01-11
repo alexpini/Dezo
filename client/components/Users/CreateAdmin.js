@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 import store, { auth } from "../../store";
 import { Link } from "react-router-dom";
 
-/**
- * COMPONENT
- */
 class AuthForm extends React.Component {
   constructor() {
     super();
@@ -40,33 +37,32 @@ class AuthForm extends React.Component {
         if (!this.props.user.id) {
           this.setState({ error: "No user" });
         } else {
-          this.props.history.push("/about");
+          this.props.history.push("/about"); //redirect to dashboard
         }
       } catch (er) {
         console.log(er);
       }
     }
   };
-
   render() {
     const { name, displayName, user } = this.props;
 
     return (
-      <div
-        style={{
-          paddingTop: "20rem",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          width: "200px",
-          height: "auto",
-          backgroundColor: "lightgrey",
-          marginLeft: "auto",
-          marginRight: "auto"
-        }}
+      <div className="parallax">
+      <div className='modal-login'
+        // style={{
+        //   paddingTop: "20rem",
+        //   display: "flex",
+        //   flexDirection: "column",
+        //   justifyContent: "center",
+        //   width: "200px",
+        //   height: "auto",
+        //   backgroundColor: "lightgrey",
+        //   marginLeft: "auto",
+        //   marginRight: "auto"
+        // }}
       >
         <div
-          style={{ textAlign: "center" }}
           onClick={() =>
             this.setState({
               login: this.state.login === "Login" ? "Signup" : "Login"
@@ -81,7 +77,7 @@ class AuthForm extends React.Component {
               <label htmlFor="email">
                 <small>Email</small>
               </label>
-              <input name="email" type="text" onChange={this.handleChange} />
+              <input name="email" type="text" onChange={this.handleChange} /><br></br>
               <label htmlFor="password">
                 <small>Password</small>
               </label>
@@ -162,6 +158,7 @@ class AuthForm extends React.Component {
             {this.state.login === "Login" ? "Login" : "SignUp"}
           </div>
         </form>
+      </div>
       </div>
     );
   }
