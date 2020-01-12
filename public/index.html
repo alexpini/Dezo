@@ -7,10 +7,13 @@
     rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
   />
-  <link
-    href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+
+  <!--Fonts-->
+
+  <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque:400,700|Raleway:400,500,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+
   <title>Dezo</title>
   <!-- <link rel="stylesheet" href="/styles.css" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,5 +31,41 @@
     if (window.performance.navigation.type === 0) {
       localStorage.removeItem("+21");
     }
+
+    $(function () {
+      $(document).scroll(function () {
+        var $nav = $(".navbar");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+      });
+      $(function () {
+      $(document).scroll(function () {
+        var $nav = $(".nav-links");
+        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+        });
+      });
+      $('.carousel').carousel({
+  interval: 2000
+})
+
+$(document).ready(function(){
+    $('#foo').bind('mousewheel', function(e){
+        if(e.originalEvent.wheelDelta /120 > 0) {
+            console.log('scrolling up !');
+        }
+        else{
+            console.log('scrolling down !');
+        }
+    });
+});
+
+$('.carousel').bind('mousewheel', function(e) {
+    if(e.originalEvent.wheelDelta /120 > 0) {
+        $(this).carousel('next');
+    } else {
+        $(this).carousel('prev');
+    }
+});
+
   </script>
 </body>

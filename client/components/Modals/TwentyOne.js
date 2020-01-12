@@ -4,7 +4,7 @@ export const TwentyOne = props => {
   return (
     <div>
       <section className="modal-main modal-top">
-        <h2 id="wild">Respectfully Wild</h2>
+        <h1 id="wild">Respectfully Wild</h1>
         <div className="modal-bottom">
           <h3>WHEN WERE YOU BORN?</h3>
           <form onSubmit={props.submitAge} className="form">

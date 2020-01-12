@@ -54,7 +54,8 @@
     "webpack": "webpack --mode=production",
     "webpack:dev": "webpack --w --mode=development",
     "start:dev": "NODE_ENV='development' nodemon server/index.js & npm run webpack:dev",
-    "start": "NODE_ENV='production' node server/index.js"
+    "start": "NODE_ENV='production' node server/index.js",
+    "kill": "ps -ef | grep 42069"
   },
   "babel": {
     "presets": [
