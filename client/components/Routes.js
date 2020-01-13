@@ -4,9 +4,25 @@ import Products from "./Products/Products";
 import About from "./About/About";
 import Press from "./Press/Press";
 import ConnectWith from "./Connect/ConnectWIth";
+import WhereToBuy from "./Buy/WhereToBuy";
+import WhereToBuyCreate from "./Buy/WhereToBuyCreate";
+import CreateProduct from "./Products/CreateProduct";
+import AuthForm from "./Users/CreateAdmin";
+import axios from "axios";
 
 class Routes extends Component {
+  state = {
+    isLoggedIn: false
+  };
+  async componentDidMount() {
+    const { data } = await axios.get("/api/auth/me");
+    if (data) {
+      this.setState({ isLoggedIn: true });
+    }
+  }
   render() {
+    const { isLoggedIn } = this.state;
+
     return (
       <Switch>
         <Redirect exact from="/" to="/about" />
@@ -14,6 +30,15 @@ class Routes extends Component {
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={ConnectWith} />
         <Route exact path="/press" component={Press} />
+        <Route exact path="/buy" component={WhereToBuyCreate} />
+        <Route exact path="/dezo/admin/" component={AuthForm} />
+        {/* <Route exact path="/dezo/admin" component={Login} /> */}
+        {isLoggedIn && (
+          <Switch>
+            {/* <Route exact path="/products/create" component={CreateProduct} /> */}
+            {/* <Route exact path="/storeLocate" component={WhereToBuyCreate} /> */}
+          </Switch>
+        )}
       </Switch>
     );
   }

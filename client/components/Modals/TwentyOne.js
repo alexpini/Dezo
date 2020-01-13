@@ -4,12 +4,10 @@ export const TwentyOne = props => {
   return (
     <div>
       <section className="modal-main modal-top">
-        <h2>Respectfully Wild</h2>
-        <h2>dezo</h2>
-        <section className="modal-bottom">
-          <p>You must be of legal drinking age to enter this website</p>
-          <p>Please enter your birthday below</p>
-          <form onSubmit={props.submitAge}>
+        <h1 id="wild">Respectfully Wild</h1>
+        <div className="modal-bottom">
+          <h3>WHEN WERE YOU BORN?</h3>
+          <form onSubmit={props.submitAge} className="form">
             <input
               className="inputs"
               name="month"
@@ -31,10 +29,11 @@ export const TwentyOne = props => {
               maxLength="4"
               onChange={props.onChange}
             />
-            <button type="submit">enter</button>
+            <button type="submit">ENTER</button>
           </form>
+          <div id="enter">You must be 21 or older to enter this website</div>
           <span>{props.error}</span>
-        </section>
+        </div>
       </section>
     </div>
   );

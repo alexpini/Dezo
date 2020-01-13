@@ -1,49 +1,118 @@
 import React, { Component } from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import { HashLink as Link, Redirect } from "react-router-hash-link";
+import store, { me, logout } from "../store";
+import { connect } from "react-redux";
+
+//links solid orange and webkit enlarge when hovered
 
 class Nav extends Component {
+  async componentDidMount() {
+    await this.props.me();
+  }
+
   render() {
+    const { user } = this.props;
     return (
-      <nav className="navbar">
+      <nav className="navbar navbar-expand-lg">
         <span className="logo"></span>
-        <NavLink
+        <Link
           to="/about"
-          activeClassName="active"
-          style={{ textDecoration: "none", color: "black" }}
+          activeclassname="active"
+          className="nav-links"
+          style={{
+            textDecoration: "none",
+            color: "#fff",
+            fontWeight: "bolder"
+          }}
         >
           About
-        </NavLink>
-        <NavLink
-          to="/products"
-          activeClassName="active"
-          style={{ textDecoration: "none", color: "black" }}
+        </Link>
+        <Link
+          to="/about#product"
+          className="nav-links"
+          activeclassname="active"
+          style={{
+            textDecoration: "none",
+            color: "#fff",
+            fontWeight: "bolder"
+          }}
         >
           Products
-        </NavLink>
-        <NavLink
+        </Link>
+        <Link
           to="/press"
-          activeClassName="active"
-          style={{ textDecoration: "none", color: "black" }}
+          className="nav-links"
+          activeclassname="active"
+          style={{
+            textDecoration: "none",
+            color: "#fff",
+            fontWeight: "bolder"
+          }}
         >
           Press
-        </NavLink>
-        <NavLink
+        </Link>
+        <Link
           to="/contact"
-          activeClassName="active"
-          style={{ textDecoration: "none", color: "black" }}
+          className="nav-links"
+          activeclassname="active"
+          style={{
+            textDecoration: "none",
+            color: "#fff",
+            fontWeight: "bolder"
+          }}
         >
-          Contact Us
-        </NavLink>
-        <NavLink
+          Contact
+        </Link>
+        <Link
           to="/buy"
-          activeClassName="active"
-          style={{ textDecoration: "none", color: "black" }}
+          className="nav-links"
+          activeclassname="active"
+          style={{
+            textDecoration: "none",
+            color: "#fff",
+            fontWeight: "bolder"
+          }}
         >
-          Where To Buy
-        </NavLink>
+          Find Dezo
+        </Link>
+        {user.email ? (
+          <a
+            onClick={() => this.props.logout()}
+            href="#"
+            className="nav-links"
+            style={{
+              textDecoration: "none",
+              color: "#fff",
+              fontWeight: "bolder"
+            }}
+          >
+            Logout
+          </a>
+        ) : (
+          <Link
+            to="/dezo/admin"
+            className="nav-links"
+            activeclassname="active"
+            style={{
+              textDecoration: "none",
+              color: "#fff",
+              fontWeight: "bolder"
+            }}
+          >
+            SignUp/Login
+          </Link>
+        )}
+        <div className="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span className="icon-bar"></span><span className="icon-bar"></span><span className="icon-bar"></span></a></div>
       </nav>
     );
   }
 }
 
-export default Nav;
+const mS = ({ user }) => ({ user });
+
+const mD = {
+  me,
+  logout
+};
+
+export default connect(mS, mD)(Nav);

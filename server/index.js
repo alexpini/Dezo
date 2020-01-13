@@ -7,7 +7,13 @@ const session = require("express-session");
 const passport = require("passport");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const db = require("./db");
+const { User } = require("./db/models");
 const sessionStore = new SequelizeStore({ db });
+
+//so we can read environment variables
+if (process.env.NODE_ENV !== "production") {
+  require("../secrets");
+}
 
 passport.serializeUser((user, done) => done(null, user.id));
 
@@ -73,15 +79,26 @@ const createApp = () => {
   });
 };
 
-const startListening = () => {
+const startListening = async () => {
   // start listening (and create a 'server' object representing our server)
   app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`));
 };
 
-const syncDb = () =>
-  db
-    // .sync({force:true})
-    .sync();
+const syncDb = async () => {
+  await User.findOrCreate({
+    where: {
+      email: "dezo@email.com",
+      fName: "Thomas",
+      lName: "Weidner",
+      isAdmin: true
+    },
+    defaults: {
+      password: "1"
+    }
+  });
+  // db.sync({ force: true });
+  db.sync();
+};
 
 async function bootApp() {
   await sessionStore.sync();
