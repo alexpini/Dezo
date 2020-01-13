@@ -3,7 +3,14 @@ import React from "react";
 export const Pointer = props => {
   const { store } = props;
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        fontSize: "3rem"
+      }}
+    >
       <div>{store.name}</div>
       <div>{store.address1}</div>
       <div>{store.city}</div>

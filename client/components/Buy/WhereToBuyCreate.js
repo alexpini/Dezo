@@ -43,20 +43,20 @@ class _WhereToBuyCreate extends React.Component {
   };
   render() {
     const { stores, user } = this.props;
-    const email = user.email || "";
+    const fName = user.fName || "";
     const { lat, lng } = this.state.coords;
     // if (!this.state.coords.lat) {
     //   return <div style={{ height: "80vh", width: "100vw" }}> Loading .. </div>;
     // } else {
     return (
-      <section style={{ paddingTop: "20rem" }}>
+      <div style={{ paddingTop: "5rem", height: "auto" }}>
         {/* <h1>Your Location: </h1>
         <h3>
           Lat: {lat}, Long: {lng}
         </h3> */}
         {user.isAdmin && (
-          <form onSubmit={this.handleSubmit} className="form">
-            <h4>Add New Store, {email}</h4>
+          <form onSubmit={this.handleSubmit} className="form add-store">
+            <h4 style={{ textAlign: "center" }}>Add New Store, {fName}</h4>
             <label>Name: </label>
             <input
               name="name"
@@ -93,7 +93,7 @@ class _WhereToBuyCreate extends React.Component {
           </form>
         )}
 
-        <div style={{ height: "100vh", width: "100%" }}>
+        <div style={{ height: "auto", width: "100%" }}>
           {stores.length && (
             // <GoogleMapReact
             //   bootstrapURLKeys={{ key: this.state.googKey }}
@@ -116,7 +116,7 @@ class _WhereToBuyCreate extends React.Component {
             // </GoogleMapReact>
           )}
         </div>
-      </section>
+      </div>
     );
   }
   // }

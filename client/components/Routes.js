@@ -6,9 +6,11 @@ import Press from "./Press/Press";
 import ConnectWith from "./Connect/ConnectWIth";
 import WhereToBuy from "./Buy/WhereToBuy";
 import WhereToBuyCreate from "./Buy/WhereToBuyCreate";
+import Landing from "./Users/Landing";
 import CreateProduct from "./Products/CreateProduct";
 import AuthForm from "./Users/CreateAdmin";
 import axios from "axios";
+import Account from "./Users/Account";
 
 class Routes extends Component {
   state = {
@@ -17,7 +19,7 @@ class Routes extends Component {
   async componentDidMount() {
     const { data } = await axios.get("/api/auth/me");
     if (data) {
-      this.setState({ isLoggedIn: true });
+      await this.setState({ isLoggedIn: true });
     }
   }
   render() {
@@ -36,7 +38,8 @@ class Routes extends Component {
         {isLoggedIn && (
           <Switch>
             {/* <Route exact path="/products/create" component={CreateProduct} /> */}
-            {/* <Route exact path="/storeLocate" component={WhereToBuyCreate} /> */}
+            <Route exact path="/userhome" component={Landing} />
+            <Route exact path="/account" component={Account} />
           </Switch>
         )}
       </Switch>

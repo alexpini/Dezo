@@ -37,7 +37,7 @@ class AuthForm extends React.Component {
         if (!this.props.user.id) {
           this.setState({ error: "No user" });
         } else {
-          this.props.history.push("/about"); //redirect to dashboard
+          this.props.history.push("/userhome"); //redirect to dashboard
         }
       } catch (er) {
         console.log(er);
@@ -48,19 +48,20 @@ class AuthForm extends React.Component {
     const { name, displayName, user } = this.props;
 
     return (
-      <div className="parallax">
-      <div className='modal-login'
-        // style={{
-        //   paddingTop: "20rem",
-        //   display: "flex",
-        //   flexDirection: "column",
-        //   justifyContent: "center",
-        //   width: "200px",
-        //   height: "auto",
-        //   backgroundColor: "lightgrey",
-        //   marginLeft: "auto",
-        //   marginRight: "auto"
-        // }}
+      // <div className="parallax">
+      <div
+        // className="modal-login"
+        style={{
+          paddingTop: "20rem",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          width: "200px",
+          height: "auto",
+          backgroundColor: "lightgrey",
+          marginLeft: "auto",
+          marginRight: "auto"
+        }}
       >
         <div
           onClick={() =>
@@ -71,13 +72,14 @@ class AuthForm extends React.Component {
         >
           {this.state.login === "Login" ? "Login" : "SignUp"}
         </div>
-        <form name={name} className="home-body form" autoComplete="off">
+        <form name={name} className="form" autoComplete="off">
           {this.state.login === "Login" ? (
             <div>
               <label htmlFor="email">
                 <small>Email</small>
               </label>
-              <input name="email" type="text" onChange={this.handleChange} /><br></br>
+              <input name="email" type="text" onChange={this.handleChange} />
+              <br></br>
               <label htmlFor="password">
                 <small>Password</small>
               </label>
@@ -149,17 +151,18 @@ class AuthForm extends React.Component {
           {user.error && user.error.response && (
             <div> {user.error.response.data} </div>
           )}
-          <div
+          <button
+            type="submit"
             onClick={this.handleSubmit}
             className="choice types"
             style={{ marginTop: 0, color: "#B8B8B3" }}
             disabled={this.state.pwCheck}
           >
             {this.state.login === "Login" ? "Login" : "SignUp"}
-          </div>
+          </button>
         </form>
       </div>
-      </div>
+      // </div>
     );
   }
 }

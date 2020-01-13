@@ -13,7 +13,12 @@ import { PictureGrid } from "./PictureGrid";
 class About extends React.Component {
   render() {
     return (
-      <div className="parallax">
+      <div
+        className="parallax"
+        style={{
+          backgroundImage: "url(../../assets/images/forest-water.jpg)"
+        }}
+      >
         {/* <div onClick={() => this.myRef.current.scrollIntoView(false)}> */}
         {/* <section className="about-container"> */}
         {/* <img src="../../assets/images/landing-photo.png" width="100%" /> */}
@@ -33,22 +38,22 @@ class About extends React.Component {
 
         <Page3 />
         <Page4 />
-        {/* <section className="about-container-2"></section> */}
+        <div className="about-container-2"></div>
         <div>
           <Products />
         </div>
-        <div className='about-page-3'>
-        <h1>
-          Follow us on IG{" "}
-          <a
-            style={{ textDecoration: "none", color: "black" }}
-            href="https://www.instagram.com/drinkdezo/"
-            target="_blank"
-          >
-            @DrinkDezo
-          </a>
-        </h1>
-        <PictureGrid />
+        <div className="about-page-3">
+          <h1>
+            Follow us on IG{" "}
+            <a
+              style={{ textDecoration: "none", color: "black" }}
+              href="https://www.instagram.com/drinkdezo/"
+              target="_blank"
+            >
+              @DrinkDezo
+            </a>
+          </h1>
+          <PictureGrid />
         </div>
       </div>
     );
