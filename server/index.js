@@ -98,67 +98,67 @@ const syncDb = async () => {
       password: "1"
     }
   });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article One"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Two"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Three"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Four"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL:
-        "https://cdn.artaic.com/wp-content/uploads/2015/03/artaic-orange-nature-poppy-tangerine-splash-tile-0300810-900x600.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Five"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Six"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
+  // await Press.findOrCreate({
+  //   where: {
+  //     name: "Dezo Article One"
+  //   },
+  //   defaults: {
+  //     description: "Small blurb about the article goes here.",
+  //     imgURL: "https://jooinn.com/images/fresh-150.jpg",
+  //     link: "https://www.instagram.com/drinkdezo/"
+  //   }
+  // });
+  // await Press.findOrCreate({
+  //   where: {
+  //     name: "Dezo Article Two"
+  //   },
+  //   defaults: {
+  //     description: "Small blurb about the article goes here.",
+  //     imgURL: "https://jooinn.com/images/fresh-150.jpg",
+  //     link: "https://www.instagram.com/drinkdezo/"
+  //   }
+  // });
+  // await Press.findOrCreate({
+  //   where: {
+  //     name: "Dezo Article Three"
+  //   },
+  //   defaults: {
+  //     description: "Small blurb about the article goes here.",
+  //     imgURL: "https://jooinn.com/images/fresh-150.jpg",
+  //     link: "https://www.instagram.com/drinkdezo/"
+  //   }
+  // });
+  // await Press.findOrCreate({
+  //   where: {
+  //     name: "Dezo Article Four"
+  //   },
+  //   defaults: {
+  //     description: "Small blurb about the article goes here.",
+  //     imgURL:
+  //       "https://cdn.artaic.com/wp-content/uploads/2015/03/artaic-orange-nature-poppy-tangerine-splash-tile-0300810-900x600.jpg",
+  //     link: "https://www.instagram.com/drinkdezo/"
+  //   }
+  // });
+  // await Press.findOrCreate({
+  //   where: {
+  //     name: "Dezo Article Five"
+  //   },
+  //   defaults: {
+  //     description: "Small blurb about the article goes here.",
+  //     imgURL: "https://jooinn.com/images/fresh-150.jpg",
+  //     link: "https://www.instagram.com/drinkdezo/"
+  //   }
+  // });
+  // await Press.findOrCreate({
+  //   where: {
+  //     name: "Dezo Article Six"
+  //   },
+  //   defaults: {
+  //     description: "Small blurb about the article goes here.",
+  //     imgURL: "https://jooinn.com/images/fresh-150.jpg",
+  //     link: "https://www.instagram.com/drinkdezo/"
+  //   }
+  // });
 };
 
 async function bootApp() {
