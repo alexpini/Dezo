@@ -17,23 +17,41 @@ class PressMaster extends React.Component {
     }
     return (
       <div
-        id="press"
-        className="parallax"
+        className="new"
         style={{
-          backgroundImage: "url(../../assets/images/forest-water.jpg)"
+          // backgroundImage: "url(../../assets/images/LA-skyline.jpg)",
+          backgroundColor: "white",
+          width: "100%"
         }}
       >
-        {articles.map(p => {
-          return (
-            <div key={p.id} style={{ paddingTop: "5rem" }}>
-              <a href={p.link} target="_blank">
-                <img src={p.imgURL} height="100" width="100" />
-              </a>
-              <h4>{p.name}</h4>
-              <div>{p.description}</div>
-            </div>
-          );
-        })}
+        <section className="about-press" id="new">
+          <h1>Press</h1>
+        </section>
+        <div id="press" className="press">
+          {articles.map(p => {
+            return (
+              <div
+                className="press-child"
+                key={p.id}
+                style={{
+                  textAlign: "center"
+                }}
+              >
+                <a href={p.link} target="_blank">
+                  <img src={p.imgURL} height="120vh" width="150vh" />
+                </a>
+                <h4
+                  style={{
+                    paddingTop: "1rem"
+                  }}
+                >
+                  {p.name}
+                </h4>
+                <div>{p.description}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
