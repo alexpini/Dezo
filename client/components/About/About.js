@@ -41,23 +41,31 @@ class About extends React.Component {
           </h1> */}
           {/* <PictureGrid /> */}
         </div>
-          <div id="embedded-press" style={{
-            backgroundColor: "white"
-          }}>
-        <PressMaster about={true} style={{
-          backgroundColor: "white !important",
-          width: "100%"
-        }}/>
-        <button id="button-press" type="button-center">
-        <Link
-          to="/press#new"
-          className="view-more"
+        <div
+          id="embedded-press"
           style={{
-            textDecoration: "none",
-            color: "#fff"
+            backgroundColor: "white"
           }}
-        >Read More</Link>
-        </button>
+        >
+          <PressMaster
+            about={true}
+            style={{
+              backgroundColor: "white !important",
+              width: "100%"
+            }}
+          />
+          <button id="button-press" type="button-center">
+            <Link
+              to="/press#new"
+              className="view-more hat"
+              style={{
+                textDecoration: "none",
+                color: "#fff"
+              }}
+            >
+              Read More
+            </Link>
+          </button>
         </div>
       </div>
     );
