@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Products from "./Products/Products";
 import About from "./About/About";
 import Press from "./Press/Press";
+import PressMaster from "./Press/PressMaster";
 import ConnectWith from "./Connect/ConnectWIth";
 import WhereToBuy from "./Buy/WhereToBuy";
 import WhereToBuyCreate from "./Buy/WhereToBuyCreate";
@@ -31,15 +32,17 @@ class Routes extends Component {
         <Route exact path="/products" component={Products} />
         <Route exact path="/about" component={About} />
         <Route exact path="/contact" component={ConnectWith} />
-        <Route exact path="/press" component={Press} />
+        <Route exact path="/press" component={PressMaster} />
         <Route exact path="/buy" component={WhereToBuyCreate} />
         <Route exact path="/dezo/admin/" component={AuthForm} />
+        <Route exact path="/articles" component={Press} />
         {/* <Route exact path="/dezo/admin" component={Login} /> */}
         {isLoggedIn && (
           <Switch>
             {/* <Route exact path="/products/create" component={CreateProduct} /> */}
             <Route exact path="/userhome" component={Landing} />
             <Route exact path="/account" component={Account} />
+            <Route exact path="/articles" component={Press} />
           </Switch>
         )}
       </Switch>

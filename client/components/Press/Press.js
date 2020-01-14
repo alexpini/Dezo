@@ -1,37 +1,54 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createPressArticles } from "../../store";
 
-const press = [
-  { name: "Tom", phone: "123-456-7890" },
-  { name: "Alex", phone: "123-456-7890" },
-  { name: "Marc", phone: "123-456-7890" },
-  { name: "Matt", phone: "123-456-7890" },
-  { name: "Eliot", phone: "123-456-7890" },
-  { name: "Jonathan", phone: "123-456-7890" }
-];
-
-export default class Press extends React.Component {
+class Press extends React.Component {
   state = {
-    press: []
+    name: "",
+    description: "",
+    link: "",
+    imgURL: ""
   };
-  componentDidMount() {
-    this.setState({ press });
-  }
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.createPressArticles(this.state);
+  };
+
   render() {
+    const { user } = this.props;
     return (
-      <div id="press" style={{ padding: "15rem" }}>
-        <h1 style={{ textAlign: "center" }}>Press</h1>
-        <div className="press-container">
-          {this.state.press.map((p, idx) => {
-            return (
-              <div key={idx}>
-                {p.name}
-                <br />
-                {p.phone}
-              </div>
-            );
-          })}
-        </div>
+      <div id="press" style={{ paddingTop: "5rem" }}>
+        {/* {user.isAdmin && ( */}
+        <form>
+          <label>Image</label>
+          <input name="imgURL" onChange={this.handleChange} />
+          <label>Name</label>
+          <input name="name" onChange={this.handleChange} />
+          <label>Desc</label>
+          <input
+            name="description"
+            onChange={this.handleChange}
+            type="textarea"
+          />
+          <label>Link</label>
+          <input name="link" onChange={this.handleChange} type="textarea" />
+
+          <button onClick={this.handleSubmit} type="submit">
+            ENTER
+          </button>
+        </form>
+        {/* )} */}
       </div>
     );
   }
 }
+
+const mS = ({ user }) => ({ user });
+const mD = { createPressArticles };
+
+export default connect(mS, mD)(Press);

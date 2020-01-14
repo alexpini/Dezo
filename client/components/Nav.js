@@ -2,35 +2,66 @@ import React, { Component } from "react";
 import { HashLink as Link, Redirect } from "react-router-hash-link";
 import store, { me, logout } from "../store";
 import { connect } from "react-redux";
-import Products from "./Products/Products"
-import About from "./About/About"
+import Products from "./Products/Products";
+import About from "./About/About";
 
 //links solid orange and webkit enlarge when hovered
 import ScrollspyNav from "react-scrollspy-nav";
 
 class Nav extends Component {
-    render() {
-        return (
-            <div className="navbar">
-                <div>
-                    <ScrollspyNav
-                        scrollTargetIds={["Home", "About", "Products", "Press", "Contact", "Find"]}
-                        activeNavClass="active"
-                        scrollDuration="1000"
-                    >
-                        <ul class-Name="nav-links">
-                            <li><a className="nav-links" href="/"><span>Home</span></a></li>
-                            <li><a className="nav-links" href="#about"><span>About</span></a></li>
-                            <li><a className="nav-links" href="#products"><span>Products</span></a></li>
-                            <li><a className="nav-links" href="#press"><span>Press</span></a></li>
-                            <li><a className="nav-links" href="#contact"><span>Contact</span></a></li>
-                            <li><a className="nav-links" href="#find-dezo"><span>Find Dezo</span></a></li>
-                        </ul>
-                    </ScrollspyNav>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="navbar">
+        <div>
+          <ScrollspyNav
+            scrollTargetIds={[
+              "home",
+              "about",
+              "products",
+              "press",
+              "contact",
+              "find"
+            ]}
+            activeNavClass="active"
+            scrollDuration="1000"
+          >
+            <ul className="nav-links">
+              <li>
+                <a className="nav-links" href="/">
+                  <span>Home</span>
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#about/press">
+                  <span>About</span>
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#products">
+                  <span>Products</span>
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#press">
+                  <span>Press</span>
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#contact">
+                  <span>Contact</span>
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#find-dezo">
+                  <span>Find Dezo</span>
+                </a>
+              </li>
+            </ul>
+          </ScrollspyNav>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Nav;

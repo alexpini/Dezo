@@ -25,4 +25,4 @@ const Press = db.define("press", {
   }
 });
 
-module.exports = Product;
+module.exports = Press;
