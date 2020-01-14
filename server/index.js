@@ -85,6 +85,8 @@ const startListening = async () => {
 };
 
 const syncDb = async () => {
+  db.sync({ force: true });
+  // db.sync();
   await User.findOrCreate({
     where: {
       email: "dezo@email.com",
@@ -157,8 +159,6 @@ const syncDb = async () => {
       link: "https://www.instagram.com/drinkdezo/"
     }
   });
-  db.sync({ force: true });
-  // db.sync();
 };
 
 async function bootApp() {
