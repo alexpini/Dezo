@@ -98,70 +98,60 @@ const syncDb = async () => {
   });
   await Press.findOrCreate({
     where: {
-      name: "Dezo One"
+      name: "Dezo Article One"
     },
     defaults: {
-      description: "Launch",
+      description: "Small blurb about the article goes here.",
       imgURL: "https://jooinn.com/images/fresh-150.jpg",
       link: "https://www.instagram.com/drinkdezo/"
     }
   });
   await Press.findOrCreate({
     where: {
-      name: "Dezo Two"
+      name: "Dezo Article Two"
     },
     defaults: {
-      description: "Launch",
+      description: "Small blurb about the article goes here.",
       imgURL: "https://jooinn.com/images/fresh-150.jpg",
       link: "https://www.instagram.com/drinkdezo/"
     }
   });
   await Press.findOrCreate({
     where: {
-      name: "Dezo Three"
+      name: "Dezo Article Three"
     },
     defaults: {
-      description: "Launch",
+      description: "Small blurb about the article goes here.",
       imgURL: "https://jooinn.com/images/fresh-150.jpg",
       link: "https://www.instagram.com/drinkdezo/"
     }
   });
   await Press.findOrCreate({
     where: {
-      name: "Dezo Four"
+      name: "Dezo Article Four"
     },
     defaults: {
-      description: "Launch",
+      description: "Small blurb about the article goes here.",
+      imgURL: "https://cdn.artaic.com/wp-content/uploads/2015/03/artaic-orange-nature-poppy-tangerine-splash-tile-0300810-900x600.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo Article Five"
+    },
+    defaults: {
+      description: "Small blurb about the article goes here.",
       imgURL: "https://jooinn.com/images/fresh-150.jpg",
       link: "https://www.instagram.com/drinkdezo/"
     }
   });
   await Press.findOrCreate({
     where: {
-      name: "Dezo Five"
+      name: "Dezo Article Six"
     },
     defaults: {
-      description: "Launch",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Six"
-    },
-    defaults: {
-      description: "Launch",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Seven"
-    },
-    defaults: {
-      description: "Launch",
+      description: "Small blurb about the article goes here.",
       imgURL: "https://jooinn.com/images/fresh-150.jpg",
       link: "https://www.instagram.com/drinkdezo/"
     }
