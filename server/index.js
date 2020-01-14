@@ -7,7 +7,7 @@ const session = require("express-session");
 const passport = require("passport");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const db = require("./db");
-const { User } = require("./db/models");
+const { User, Press } = require("./db/models");
 const sessionStore = new SequelizeStore({ db });
 
 //so we can read environment variables
@@ -94,6 +94,76 @@ const syncDb = async () => {
     },
     defaults: {
       password: "1"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo One"
+    },
+    defaults: {
+      description: "Launch",
+      imgURL: "https://jooinn.com/images/fresh-150.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo Two"
+    },
+    defaults: {
+      description: "Launch",
+      imgURL: "https://jooinn.com/images/fresh-150.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo Three"
+    },
+    defaults: {
+      description: "Launch",
+      imgURL: "https://jooinn.com/images/fresh-150.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo Four"
+    },
+    defaults: {
+      description: "Launch",
+      imgURL: "https://jooinn.com/images/fresh-150.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo Five"
+    },
+    defaults: {
+      description: "Launch",
+      imgURL: "https://jooinn.com/images/fresh-150.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo Six"
+    },
+    defaults: {
+      description: "Launch",
+      imgURL: "https://jooinn.com/images/fresh-150.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Press.findOrCreate({
+    where: {
+      name: "Dezo Seven"
+    },
+    defaults: {
+      description: "Launch",
+      imgURL: "https://jooinn.com/images/fresh-150.jpg",
+      link: "https://www.instagram.com/drinkdezo/"
     }
   });
   // db.sync({ force: true });
