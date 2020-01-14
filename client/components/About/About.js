@@ -7,7 +7,7 @@ import { Page2 } from "./Page2";
 import { Page22 } from "./Page2-2";
 import { Page3 } from "./Page3";
 import { Page4 } from "./Page4";
-// import { Press } from "../Press/Press";
+import PressMaster from "../Press/PressMaster";
 import { PictureGrid } from "./PictureGrid";
 
 class About extends React.Component {
@@ -39,7 +39,6 @@ class About extends React.Component {
           <Products />
         </div>
 
-
         <Page3 />
         <Page4 />
         <div className="about-container-2"></div>
@@ -57,6 +56,8 @@ class About extends React.Component {
           </h1> */}
           {/* <PictureGrid /> */}
         </div>
+
+        <PressMaster about={true} />
       </div>
     );
   }
