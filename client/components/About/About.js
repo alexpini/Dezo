@@ -8,7 +8,6 @@ import { Page22 } from "./Page2-2";
 import { Page3 } from "./Page3";
 import { Page4 } from "./Page4";
 import PressMaster from "../Press/PressMaster";
-import { PictureGrid } from "./PictureGrid";
 
 class About extends React.Component {
   render() {
@@ -19,20 +18,6 @@ class About extends React.Component {
           backgroundImage: "url(../../assets/images/forest-water.jpg)"
         }}
       >
-        {/* <div onClick={() => this.myRef.current.scrollIntoView(false)}> */}
-        {/* <section className="about-container"> */}
-        {/* <img src="../../assets/images/landing-photo.png" width="100%" /> */}
-        {/* </section> */}
-        {/* <section id='about-slogan' onClick={this.scrollToRef}>
-          <div>
-            <h2 id=''>
-              The World's Most Vitalizing Spiked Fruit Water
-            </h2>
-          </div>
-        </section> */}
-        {/* not sure if you want this here for the scroll thingy
-            if you do, we could just import a bunch of components
-            here and they will display in order or whatever */}
         <Page2 />
         <Page22 />
         <div>
@@ -56,8 +41,24 @@ class About extends React.Component {
           </h1> */}
           {/* <PictureGrid /> */}
         </div>
-
-        <PressMaster about={true} />
+          <div id="embedded-press" style={{
+            backgroundColor: "white"
+          }}>
+        <PressMaster about={true} style={{
+          backgroundColor: "white !important",
+          width: "100%"
+        }}/>
+        <button id="button-press" type="button-center">
+        <Link
+          to="/press#new"
+          className="view-more"
+          style={{
+            textDecoration: "none",
+            color: "#fff"
+          }}
+        >Read More</Link>
+        </button>
+        </div>
       </div>
     );
   }

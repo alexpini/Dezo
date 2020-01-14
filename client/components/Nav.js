@@ -32,7 +32,7 @@ class Nav extends Component {
                 </a>
               </li>
               <li>
-                <a className="nav-links" href="#about/press">
+                <a className="nav-links" href="#about">
                   <span>About</span>
                 </a>
               </li>
