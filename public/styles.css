@@ -1,5 +1,3 @@
-
-
 body {
   margin: 0;
   margin-top: 0;
@@ -97,8 +95,6 @@ h1 {
   text-align: center;
   padding: 3vw;
 }
-
-
 
 h2 {
   font-family: "Abril Fatface", cursive;
@@ -291,13 +287,13 @@ li.scrolled {
 }
 a:link {
   text-decoration: none !important;
-  color: #fff
+  color: #fff;
 }
 
 .press .nav-links {
-    text-decoration: none !important;
-    color: orange !important;
-  }
+  text-decoration: none !important;
+  color: orange !important;
+}
 
 ul {
   display: flex;
@@ -711,7 +707,7 @@ label {
   height: 50vw;
   width: auto;
   align-items: center;
-  background-color:#fff !important;
+  background-color: #fff !important;
 }
 
 .carousel-control {
@@ -736,8 +732,6 @@ label {
   align-items: center;
   background-color: transparent !important;
 } */
-
-
 
 header {
   position: relative;
@@ -781,7 +775,8 @@ header .overlay {
 
 @media (pointer: coarse) and (hover: none) {
   header {
-    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    background: url("https://source.unsplash.com/XT5OInaElMw/1600x900") black
+      no-repeat center center scroll;
   }
   header video {
     display: none;
@@ -799,9 +794,8 @@ header .overlay {
   padding-top: 20vh;
   background-color: transparent;
   opacity: 1;
-  color: #045B6E;
+  color: #045b6e;
 }
-
 
 .press {
   display: flex;
@@ -810,7 +804,8 @@ header .overlay {
   align-items: center;
   justify-content: space-around;
   align-items: center;
-  height: 80vh;
+  height: auto;
+  min-height: 80vh;
   padding-top: 10vh;
 }
 
@@ -825,19 +820,19 @@ header .overlay {
 }
 
 .view-more {
-  margin: .5rem;
+  margin: 0.5rem;
   font-size: 2em;
 }
 
 #button-press {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #eb793c;
-    border: 1px #eb793c solid;
-    color: #fff;
-    margin-bottom: 3vh;
-    margin-left: 43vw !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eb793c;
+  border: 1px #eb793c solid;
+  color: #fff;
+  margin-bottom: 3vh;
+  margin-left: 43vw !important;
 }
 
 button {
@@ -847,4 +842,3 @@ button {
   margin: 0.5rem;
   color: #fff;
 }
-
