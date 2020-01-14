@@ -88,8 +88,8 @@ const syncDb = async () => {
   await User.findOrCreate({
     where: {
       email: "dezo@email.com",
-      fName: "Thomas",
-      lName: "Weidner",
+      fName: "Marc",
+      lName: "W.",
       isAdmin: true
     },
     defaults: {

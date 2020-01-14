@@ -4,8 +4,10 @@ import Products from "../Products/Products";
 import { Link } from "react-router-dom";
 // import CreateProduct from "../Products/CreateProduct";
 import { Page2 } from "./Page2";
+import { Page22 } from "./Page2-2";
 import { Page3 } from "./Page3";
-// import { Press } from "../Press/Press";
+import { Page4 } from "./Page4";
+import PressMaster from "../Press/PressMaster";
 import { PictureGrid } from "./PictureGrid";
 
 class About extends React.Component {
@@ -32,63 +34,30 @@ class About extends React.Component {
             if you do, we could just import a bunch of components
             here and they will display in order or whatever */}
         <Page2 />
-
-        <Page3 />
-        {/* <section className="about-container-2"></section> */}
+        <Page22 />
         <div>
           <Products />
         </div>
-        {/* <CreateProduct myRef={this.myRef} /> */}
-        {/* <CreateProduct /> */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "-10vh"
-          }}
-        >
-          <div className="find-button">
-            <Link to="/buy" style={{ textDecoration: "none", color: "white" }}>
-              Find Dezo
-            </Link>
-          </div>
-          {/* <img src="../../assets/images/map.png" width="70%" /> */}
+
+        <Page3 />
+        <Page4 />
+        <div className="about-container-2"></div>
+
+        <div className="about-page-">
+          {/* <h1>
+            Follow us on IG{" "}
+            <a
+              style={{ textDecoration: "none", color: "black" }}
+              href="https://www.instagram.com/drinkdezo/"
+              target="_blank"
+            >
+              @DrinkDezo
+            </a>
+          </h1> */}
+          {/* <PictureGrid /> */}
         </div>
-        <section className="about-container-3"></section>
-        <h1
-          id="instagram"
-          style={{
-            textAlign: "center",
-            textTransform: "uppercase",
-            fontSize: "4rem",
-            color: "#008080",
-            margin: "0",
-            padding: "5rem",
-            backgroundColor: "white"
-          }}
-        >
-          Follow us on IG{" "}
-          <a
-            style={{ textDecoration: "none", color: "black" }}
-            href="https://www.instagram.com/drinkdezo/"
-            target="_blank"
-          >
-            @DrinkDezo
-          </a>
-        </h1>
-        <div
-          id="instagram"
-          style={{
-            display: "flex",
-            justifyContent: "center"
-          }}
-        >
-          <section
-            style={{ display: "flex", width: "90vw", paddingBottom: "10vh" }}
-          >
-            <PictureGrid />
-          </section>
-        </div>
+
+        <PressMaster about={true} />
       </div>
     );
   }

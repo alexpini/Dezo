@@ -4,9 +4,6 @@ import PropTypes from "prop-types";
 import store, { auth } from "../../store";
 import { Link } from "react-router-dom";
 
-/**
- * COMPONENT
- */
 class AuthForm extends React.Component {
   constructor() {
     super();
@@ -40,19 +37,20 @@ class AuthForm extends React.Component {
         if (!this.props.user.id) {
           this.setState({ error: "No user" });
         } else {
-          this.props.history.push("/about");
+          this.props.history.push("/userhome"); //redirect to dashboard
         }
       } catch (er) {
         console.log(er);
       }
     }
   };
-
   render() {
     const { name, displayName, user } = this.props;
 
     return (
+      // <div className="parallax">
       <div
+        // className="modal-login"
         style={{
           paddingTop: "20rem",
           display: "flex",
@@ -66,7 +64,6 @@ class AuthForm extends React.Component {
         }}
       >
         <div
-          style={{ textAlign: "center" }}
           onClick={() =>
             this.setState({
               login: this.state.login === "Login" ? "Signup" : "Login"
@@ -75,13 +72,14 @@ class AuthForm extends React.Component {
         >
           {this.state.login === "Login" ? "Login" : "SignUp"}
         </div>
-        <form name={name} className="home-body form" autoComplete="off">
+        <form name={name} className="form" autoComplete="off">
           {this.state.login === "Login" ? (
             <div>
               <label htmlFor="email">
                 <small>Email</small>
               </label>
               <input name="email" type="text" onChange={this.handleChange} />
+              <br></br>
               <label htmlFor="password">
                 <small>Password</small>
               </label>
@@ -153,16 +151,18 @@ class AuthForm extends React.Component {
           {user.error && user.error.response && (
             <div> {user.error.response.data} </div>
           )}
-          <div
+          <button
+            type="submit"
             onClick={this.handleSubmit}
             className="choice types"
             style={{ marginTop: 0, color: "#B8B8B3" }}
             disabled={this.state.pwCheck}
           >
             {this.state.login === "Login" ? "Login" : "SignUp"}
-          </div>
+          </button>
         </form>
       </div>
+      // </div>
     );
   }
 }

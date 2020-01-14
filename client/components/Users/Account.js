@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { updateUser } from "../../store";
 
 class Account extends React.Component {
   constructor() {
@@ -7,7 +8,8 @@ class Account extends React.Component {
     this.state = {
       fName: "",
       lName: "",
-      email: ""
+      email: "",
+      error: ""
     };
   }
 
@@ -17,7 +19,13 @@ class Account extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    const { user } = this.props;
+    if (!user.id) {
+      this.setState({ error: "Nope" });
+    }
+    const { fName, lName, email } = this.state;
+    const obj = { fName, lName, email };
+    this.props.updateUser(obj, user.id);
   };
 
   componentDidMount() {
@@ -27,28 +35,35 @@ class Account extends React.Component {
 
   render() {
     return (
-      <form className="form" style={{ paddingTop: "41rem" }}>
-        <input
-          name="lName"
-          value={this.state.lName}
-          onChange={this.handleChange}
-        />
-        <input
-          name="fName"
-          value={this.state.fName}
-          onChange={this.handleChange}
-        />
-        <input
-          name="email"
-          value={this.state.email}
-          onChange={this.handleChange}
-        />
-        <button type="submit">Change Info</button>
-      </form>
+      <div style={{ paddingTop: "10rem" }}>
+        <h1>Update Account Info</h1>
+        <form className="form add-store">
+          <label></label>
+          <input
+            name="fName"
+            value={this.state.fName}
+            onChange={this.handleChange}
+          />
+          <input
+            name="lName"
+            value={this.state.lName}
+            onChange={this.handleChange}
+          />
+          <input
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+          <button type="submit" onClick={this.handleSubmit}>
+            Change Info
+          </button>
+        </form>
+      </div>
     );
   }
 }
 
 const mS = ({ user }) => ({ user });
+const mD = { updateUser };
 
-export default connect(mS)(Account);
+export default connect(mS, mD)(Account);
