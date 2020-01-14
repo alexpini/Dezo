@@ -2,8 +2,15 @@ import React from "react";
 
 export const Page4 = props => {
   return (
+    <div
+        className="parallax"
+        style={{
+          backgroundImage: "url(../../assets/images/water-02.jpg)",
+          width: "100%"
+        }}
+      >
     <section className="about-page_4">
-      <div className="about-page_4-box">
+      <div className="about-page_4-box" >
         <div className="col-sm-12 col-md-12 col-lg-12">
           <h1>Our Story</h1>
           </div>
@@ -19,5 +26,6 @@ export const Page4 = props => {
         </div>
       </div>
     </section>
+    </div>
   );
 };

@@ -58,11 +58,13 @@ class Products extends Component {
   // };
   render() {
     return (
-      <div>
-        <div id="products">
+      <div id="products">
+        <div>
           <h1>Our Flavors</h1>
 
-          <div id="myCarousel" className="carousel slide" data-ride="carousel">
+
+          <div id="myCarousel" className="carousel slide"
+          data-ride="carousel">
             <ol className="carousel-indicators">
               <li
                 data-target="#myCarousel"
@@ -72,7 +74,7 @@ class Products extends Component {
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
-            <div className="carousel-inner">
+            <div className="carousel-inner" >
               {products.map((p, idx) => {
                 let classN = "item";
                 if (idx === 0) {
@@ -80,33 +82,16 @@ class Products extends Component {
                 }
                 return (
                   <div className={classN} key={p.id}>
-                    <img src={`${p.imgURL}`} alt={p.description[0]} />
+                    <img src={`${p.imgURL}`} alt={p.description[0]}
+                    className="center"
+                      style={{
+                      width: "15vh"
+                      }}
+                    />
                   </div>
                 );
               })}
             </div>
-            {/* <div className="carousel-inner">
-              <div className="item active">
-                <img
-                  src=".../public/assets/images/coconut-water.png"
-                  alt="Coconut Water"
-                />
-              </div>
-
-              <div className="item">
-                <img
-                  src=".../../public/assets/images/coconut-water.png"
-                  alt="Cactus Water"
-                />
-              </div>
-
-              <div className="item">
-                <img
-                  src="..../../assets/images/coconut-water.png"
-                  alt="Watermelon Water"
-                />
-              </div>
-            </div> */}
 
             <a
               className="left carousel-control"
@@ -114,7 +99,8 @@ class Products extends Component {
               data-slide="prev"
             >
               <span className="glyphicon glyphicon-chevron-left"></span>
-              <span className="sr-only">Previous</span>
+              <span className="sr-only"
+                      >Previous</span>
             </a>
             <a
               className="right carousel-control"

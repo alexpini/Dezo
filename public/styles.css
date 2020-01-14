@@ -80,13 +80,17 @@ h2 {
   }
 }
 
-a:link {
-  text-decoration: none !important;
-}
-
 /* a: hover {
   color: #eb793c;
 } */
+
+#landing-header {
+  color: #fff;
+}
+
+#landing-header h1 {
+  font-size: 8vw;
+}
 
 h1 {
   font-family: "Raleway", sans-serif;
@@ -259,8 +263,8 @@ button {
 }
 
 .navbar {
-  height: 10vh;
   display: flex;
+  height: 10vh;
   justify-content: flex-end;
   font-size: 1.2em;
   background-color: transparent;
@@ -269,27 +273,71 @@ button {
   z-index: 100;
   border-radius: 0 !important;
   padding: 2rem;
+  align-items: center;
 }
 
 .navbar.scrolled {
-  background-color: #fff !important;
+  background-color: #20b4ce !important;
   transition: background-color 200ms linear;
+  align-items: center;
 }
 
 .nav-links {
   padding-left: 3rem;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
+  display: flex;
+  color: #fff;
+
+
+}
+li {
+  display: flex;
+  align-items: center;
+}
+li.scrolled {
+  align-items: center;
+}
+.nav-links.scrolled {
+  color: #fff !important;
+  transition: colorcolor 200ms linear;
+  align-items: center;
+}
+a:link {
+  text-decoration: none !important;
+  color: #fff
 }
 
-.nav-links.scrolled {
-  color: #eb793c !important;
-  transition: colorcolor 200ms linear;
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+ul.scrolled {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+span {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+a:hover {
+  font-size: 1.75vw;
+  transition: 0.25s ease;
+}
+
+a.scrolled:hover {
+  font-size: 1.75vw;
+  transition: 0.25s ease;
+  color: #eb793c;
+}
+
+a.scrolled:active {
+  color: black;
 }
 
 .active {
-  -webkit-text-stroke-color: transparent !important;
-  color: #eb793c !important;
+  color: black !important;
 }
 
 .logo {
@@ -468,7 +516,6 @@ button {
   text-align: center;
   font-size: 3rem;
   height: 100vh;
-  margin-bottom: 50vh;
   opacity: 1;
   background-color: #fff;
   color: #eb793c;
@@ -484,25 +531,29 @@ button {
   font-family: impact;
 }
 
+#products {
+  height: 100vh;
+}
+
 .about-page_3 {
-  height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: #eb793c;
   /* background-image: url("./assets/images/girl-in-pool.jpg"); */
   z-index: -1;
 }
 
 .about-page_4 {
-  height: 80vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #045b6e;
-  /* background-image: url("./assets/images/girl-in-pool.jpg"); */
+  width: 100%;
+  /* background-color: #045b6e; */
   z-index: -1;
 }
 
@@ -512,8 +563,12 @@ button {
   height: 50vw;
   margin: 15vw;
   background-color: #fff;
-  opacity: 0.8;
+  opacity: 0.9;
   z-index: 0;
+}
+
+.about-page_4-box p {
+  opacity: 1 !important;
 }
 
 section {
@@ -600,9 +655,18 @@ label {
   padding-top: 50%;
   padding: 8rem;
   display: flex;
-  flex-direction: space-between;
+  justify-content: space-between;
   color: #fff !important;
-  border: 1px solid #fff;
+}
+
+.row p {
+  padding-top: 10%;
+  font-size: 1.8vw;
+}
+
+.col {
+  display: flex;
+  align-items: center;
 }
 
 .typewriter p {
@@ -655,5 +719,83 @@ label {
 }
 
 #myCarousel {
-  height: 60vh;
+  display: flex;
+  height: 50vw;
+  width: auto;
+  align-items: center;
+  background-color:#fff !important;
+}
+
+.carousel-control {
+  background: transparent !important;
+}
+
+.glyphicon {
+  color: #eb793c;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* .carousel > img{
+  display: flex;
+  justify-content: space-around;
+  padding-left: 42%;
+  align-items: center;
+  background-color: transparent !important;
+} */
+
+
+
+header {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+  }
+  header video {
+    display: none;
+  }
 }

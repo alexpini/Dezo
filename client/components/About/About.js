@@ -35,15 +35,17 @@ class About extends React.Component {
             here and they will display in order or whatever */}
         <Page2 />
         <Page22 />
+        <div>
+          <Products />
+        </div>
+
 
         <Page3 />
         <Page4 />
         <div className="about-container-2"></div>
-        <div>
-          <Products />
-        </div>
-        <div className="about-page-3">
-          <h1>
+
+        <div className="about-page-">
+          {/* <h1>
             Follow us on IG{" "}
             <a
               style={{ textDecoration: "none", color: "black" }}
@@ -52,8 +54,8 @@ class About extends React.Component {
             >
               @DrinkDezo
             </a>
-          </h1>
-          <PictureGrid />
+          </h1> */}
+          {/* <PictureGrid /> */}
         </div>
       </div>
     );
