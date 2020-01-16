@@ -24,27 +24,34 @@ class PressMaster extends React.Component {
           width: "100%"
         }}
       >
-       <section className="about-press" id="new">
-        <h1>Press</h1>
-    </section>
-    <div id="press" className="press">
-
-        {articles.map(p => {
-          return (
-            <div className="press-child" key={p.id} style={{
-            textAlign: "center"}}>
-              <a href={p.link} target="_blank">
-                <img src={p.imgURL} height="120vh" width="150vh" />
-              </a>
-              <h4
-              style={{
-          paddingTop: "1rem"
-        }}>{p.name}</h4>
-              <div>{p.description}</div>
-            </div>
-          );
-        })}
-      </div>
+        <section className="about-press" id="new">
+          <h1>Press</h1>
+        </section>
+        <div id="press" className="press">
+          {articles.map(p => {
+            return (
+              <div
+                className="press-child"
+                key={p.id}
+                style={{
+                  textAlign: "center"
+                }}
+              >
+                <a href={p.link} target="_blank">
+                  <img src={p.imgURL} height="120vh" width="150vh" />
+                </a>
+                <h4
+                  style={{
+                    paddingTop: "1rem"
+                  }}
+                >
+                  {p.name}
+                </h4>
+                <div>{p.description}</div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

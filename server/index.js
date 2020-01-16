@@ -85,6 +85,8 @@ const startListening = async () => {
 };
 
 const syncDb = async () => {
+  // db.sync({ force: true });
+  db.sync();
   await User.findOrCreate({
     where: {
       email: "dezo@email.com",
@@ -132,7 +134,8 @@ const syncDb = async () => {
     },
     defaults: {
       description: "Small blurb about the article goes here.",
-      imgURL: "https://cdn.artaic.com/wp-content/uploads/2015/03/artaic-orange-nature-poppy-tangerine-splash-tile-0300810-900x600.jpg",
+      imgURL:
+        "https://cdn.artaic.com/wp-content/uploads/2015/03/artaic-orange-nature-poppy-tangerine-splash-tile-0300810-900x600.jpg",
       link: "https://www.instagram.com/drinkdezo/"
     }
   });
@@ -156,8 +159,6 @@ const syncDb = async () => {
       link: "https://www.instagram.com/drinkdezo/"
     }
   });
-  // db.sync({ force: true });
-  db.sync();
 };
 
 async function bootApp() {
