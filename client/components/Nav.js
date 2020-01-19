@@ -9,6 +9,9 @@ import About from "./About/About";
 import ScrollspyNav from "react-scrollspy-nav";
 
 class Nav extends Component {
+  async componentDidMount() {
+    await this.props.me();
+  }
   render() {
     return (
       <div className="navbar">
@@ -64,7 +67,14 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+const mS = ({ user }) => ({ user });
+
+const mD = {
+  me,
+  logout
+};
+
+export default connect(mS, mD)(Nav);
 
 // class Nav extends Component {
 //   async componentDidMount() {
