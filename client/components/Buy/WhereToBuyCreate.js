@@ -4,7 +4,6 @@ import { createStoreLocation } from "../../store";
 import { getAllStores } from "../../store";
 import { GoogleApiWrapper, Map, InfoWindow, Marker } from "google-maps-react";
 import { Pointer } from "./Pointer";
-import axios from "axios";
 
 console.log(process.env.GOOG_KEY);
 
@@ -175,5 +174,5 @@ const WhereToBuyCreate = connect(mS, mD)(_WhereToBuyCreate);
 // export default WhereToBuyCreate;
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyAmr2BCU8-PycL9HHxbhLrQVV5gg9Q92CM"
+  apiKey: process.env.GOOG_KEY // can be found in secrets, may have to be replaced in development with the string val
 })(WhereToBuyCreate);
