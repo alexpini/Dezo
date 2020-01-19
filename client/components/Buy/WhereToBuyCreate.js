@@ -5,8 +5,6 @@ import { getAllStores } from "../../store";
 import { GoogleApiWrapper, Map, InfoWindow, Marker } from "google-maps-react";
 import { Pointer } from "./Pointer";
 
-console.log(process.env.GOOG_KEY);
-
 class _WhereToBuyCreate extends React.Component {
   constructor() {
     super();
@@ -19,9 +17,7 @@ class _WhereToBuyCreate extends React.Component {
       loading: true,
       show: false,
       storeName: "",
-      goog:
-        process.env.GOOG_KEY ||
-        "wwwwAIvjnsdzaSyAmr2BCU8-PycL9HHxbhLrQVV5gg9Q92CM",
+      goog: process.env.GOOG_KEY,
       coords: {}
     };
   }
