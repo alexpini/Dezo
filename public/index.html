@@ -13,24 +13,30 @@
     rel="stylesheet"
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
   />
-  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <link rel="stylesheet" type="text/css" href="./styles.css" />
 
   <!--Fonts-->
 
-  <link href="https://fonts.googleapis.com/css?family=Darker+Grotesque:400,700|Raleway:400,500,800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Darker+Grotesque:400,700|Raleway:400,500,800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap"
+    rel="stylesheet"
+  />
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
   <title>Dezo</title>
   <!-- <link rel="stylesheet" href="/styles.css" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script
+  <!-- <script
     async
     defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmr2BCU8-PycL9HHxbhLrQVV5gg9Q92CM"
     type="text/javascript"
-  ></script>
+  ></script> -->
 </head>
 <body name="app">
   <div id="root"></div>
@@ -40,41 +46,39 @@
       localStorage.removeItem("+21");
     }
 
-    $(function () {
-      $(document).scroll(function () {
+    $(function() {
+      $(document).scroll(function() {
         var $nav = $(".navbar");
-        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-        });
+        $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
       });
-      $(function () {
-      $(document).scroll(function () {
-        var $nav = $(".nav-links");
-        $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
-        });
-      });
-
-      $('.carousel').carousel({
-  interval: 2000
-})
-
-$(document).ready(function(){
-    $('#foo').bind('mousewheel', function(e){
-        if(e.originalEvent.wheelDelta /120 > 0) {
-            console.log('scrolling up !');
-        }
-        else{
-            console.log('scrolling down !');
-        }
     });
-});
+    $(function() {
+      $(document).scroll(function() {
+        var $nav = $(".nav-links");
+        $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+      });
+    });
 
-$('.carousel').bind('mousewheel', function(e) {
-    if(e.originalEvent.wheelDelta /120 > 0) {
-        $(this).carousel('next');
-    } else {
-        $(this).carousel('prev');
-    }
-});
+    $(".carousel").carousel({
+      interval: 2000
+    });
 
+    $(document).ready(function() {
+      $("#foo").bind("mousewheel", function(e) {
+        if (e.originalEvent.wheelDelta / 120 > 0) {
+          console.log("scrolling up !");
+        } else {
+          console.log("scrolling down !");
+        }
+      });
+    });
+
+    $(".carousel").bind("mousewheel", function(e) {
+      if (e.originalEvent.wheelDelta / 120 > 0) {
+        $(this).carousel("next");
+      } else {
+        $(this).carousel("prev");
+      }
+    });
   </script>
 </body>

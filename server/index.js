@@ -7,9 +7,9 @@ const session = require("express-session");
 const passport = require("passport");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const db = require("./db");
-const { User, Press } = require("./db/models");
+const { User, Press, Store } = require("./db/models");
 const sessionStore = new SequelizeStore({ db });
-
+// require("dotenv").config();
 //so we can read environment variables
 if (process.env.NODE_ENV !== "production") {
   require("../secrets");
@@ -157,6 +157,17 @@ const syncDb = async () => {
       description: "Small blurb about the article goes here.",
       imgURL: "https://jooinn.com/images/fresh-150.jpg",
       link: "https://www.instagram.com/drinkdezo/"
+    }
+  });
+  await Store.findOrCreate({
+    where: {
+      name: "Pini's Pizzeria"
+    },
+    defaults: {
+      address1: "749 Boston RD",
+      city: "Billerica",
+      state: "MA",
+      zip: "01821"
     }
   });
 };

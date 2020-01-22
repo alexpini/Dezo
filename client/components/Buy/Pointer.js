@@ -16,7 +16,7 @@ export const Pointer = props => {
       <div>{store.city}</div>
       <div>{store.state}</div>
       <div>{store.zip}</div>
-      <img src={"../../assets/images/dezo-logo.png"} width="30" height="30" />
+      {/* <img src={"../../assets/images/dezo-logo.png"} width="30" height="30" /> */}
     </div>
   );
 };

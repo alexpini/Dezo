@@ -12,6 +12,9 @@ import About from "./About/About";
 
 
 class Nav extends Component {
+  async componentDidMount() {
+    await this.props.me();
+  }
   render() {
     return (
 
@@ -91,7 +94,14 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+const mS = ({ user }) => ({ user });
+
+const mD = {
+  me,
+  logout
+};
+
+export default connect(mS, mD)(Nav);
 
 
 
