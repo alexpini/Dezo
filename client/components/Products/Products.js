@@ -65,7 +65,7 @@ class Products extends Component {
 
          <div id="myCarousel" className="carousel slide"
          data-ride="carousel">
-           <ol className="carousel-indicators">
+           {/* <ol className="carousel-indicators">
              <li
                data-target="#myCarousel"
                data-slide-to="0"
@@ -73,7 +73,7 @@ class Products extends Component {
              ></li>
              <li data-target="#myCarousel" data-slide-to="1"></li>
              <li data-target="#myCarousel" data-slide-to="2"></li>
-           </ol>
+           </ol> */}
            <div className="carousel-inner" >
              {products.map((p, idx) => {
                let classN = "item";
@@ -81,14 +81,16 @@ class Products extends Component {
                  classN += " active";
                }
                return (
-                 <div className={classN} key={p.id}>
-                   <img src={`${p.imgURL}`} alt={p.description[0]}
-                   className="center"
-                     style={{
-                     width: "12vw"
-                     }}
-                   />
-                 </div>
+                    <div className={classN} key={p.id}>
+                    <p id="product-description" className="col-sm-6">{p.description[0]}<br></br>{p.description[1]}<br></br>{p.description[2]}<br></br>{p.description[3]}<br></br>{p.description[4]}</p>
+                      <img src={`${p.imgURL}`} alt={p.description[0]}
+                      className="col-sm-6"
+                        style={{
+                        width: "12vw"
+                        }}
+                      />
+
+                    </div>
                );
              })}
            </div>

@@ -8,7 +8,7 @@ export const TwentyOne = props => {
         }}>
         {/* <h1 className="modal-top" id="twenty-one-h1">Respectfully Wild&trade;</h1> */}
         <div className="modal-top">
-          <img class="image-twenty-one" src="../../assets/images/white-logo-15.png"></img>
+          <img class="image-twenty-one" src="../../assets/images/white-logo-03.png"></img>
         </div>
         <div className="modal-form">
           <h3 id="twenty-one">WHEN WERE YOU BORN?</h3>
@@ -41,7 +41,7 @@ export const TwentyOne = props => {
               <button id="enter-button" type="submit">ENTER</button>
             </form>
           <h4 id="enter">You must be 21 or older to enter this website</h4>
-          <span>{props.error}</span>
+          <span id="error-twenty-one">{props.error}</span>
         </div>
       </section>
     </div>

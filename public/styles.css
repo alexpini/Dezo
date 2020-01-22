@@ -96,6 +96,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   padding: 3vw;
+  color: #008099;
  }
 
 
@@ -148,8 +149,14 @@ body {
 #twenty-one {
    padding: 4vw;
    color: #eb793c;
+   font-weight: 800;
    font-size: 4vw;
    font-family: "Montserrat", sans-serif;
+ }
+
+ #error-twenty-one {
+   margin: 1rem;
+   color: red;
  }
 
 
@@ -410,9 +417,47 @@ body {
    transition: 0.25s ease;
  }
 
+ .dropdown-item {
+  color: #eb793c;
+  font-family: "montserrat", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+ }
+ .dropdown-item:hover{
+  color: #fff;
+  transition: 0.25s ease;
+}
+
+#dropdown-item-coconut:hover{
+  background-color: #91cf5b;
+}
+
+#dropdown-item-cactus:hover{
+  background-color: #ded84b;
+}
+
+#dropdown-item-watermelon:hover{
+  background-color: #eb7c7e;
+}
+
+
+.dropdown-menu {
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+ }
+
+ #find-dezo {
+   border: 1px #fff solid;
+   padding: .5em;
+ }
+
  li {
   display: flex;
   align-items: center;
+  padding: 1em;
  }
 
  li.scrolled {
@@ -828,6 +873,8 @@ body {
   height: 25vh;
  } */
 
+
+
  .carousel img {
   height: 10vh;
  }
@@ -974,6 +1021,8 @@ body {
   color: #fff;
  }
 
+
+
  /* @media (min-width: 768px) {
    .navbar-toggler {
      display: none !important;
@@ -1031,6 +1080,10 @@ body {
 /* .collapse:not(.show) {
     display: none;
 } */
+
+.classN {
+  background-color: blue;
+}
 
 
 .navbar-toggle {
