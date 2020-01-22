@@ -5,66 +5,163 @@ import { connect } from "react-redux";
 import Products from "./Products/Products";
 import About from "./About/About";
 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 //links solid orange and webkit enlarge when hovered
-import ScrollspyNav from "react-scrollspy-nav";
+// import ScrollspyNav from "react-scrollspy-nav";
+
 
 class Nav extends Component {
   render() {
     return (
-      <div className="navbar">
-        <div>
-          <ScrollspyNav
-            scrollTargetIds={[
-              "home",
-              "about",
-              "products",
-              "press",
-              "contact",
-              "find"
-            ]}
-            activeNavClass="active"
-            scrollDuration="1000"
-          >
-            <ul className="nav-links">
-              <li>
-                <a className="nav-links" href="/">
-                  <span>Home</span>
-                </a>
-              </li>
-              <li>
-                <a className="nav-links" href="#about">
-                  <span>About</span>
-                </a>
-              </li>
-              <li>
-                <a className="nav-links" href="#products">
-                  <span>Products</span>
-                </a>
-              </li>
-              <li>
-                <a className="nav-links" href="#press">
-                  <span>Press</span>
-                </a>
-              </li>
-              <li>
-                <a className="nav-links" href="#contact">
-                  <span>Contact</span>
-                </a>
-              </li>
-              <li>
-                <a className="nav-links" href="#find-dezo">
-                  <span>Find Dezo</span>
-                </a>
-              </li>
-            </ul>
-          </ScrollspyNav>
-        </div>
+
+<nav className="navbar navbar-expand-lg navbar-dark primary-color">
+
+  <a id="logo" className="navbar-brand mr-auto" href="/"><img src="../assets/images/dezo-logo.png" href="/about"></img></a>
+  <div class="social-icons">
+    <li><a className="navbar-brand mr-auto" href="https://www.instagram.com/drinkdezo/"><img src="../assets/images/instagram.svg" href="https://www.instagram.com/drinkdezo/"></img></a></li>
+     <li><a className="navbar-brand mr-auto" href="https://www.facebook.com/drinkdezo/"><img src="../assets/images/facebook.svg" href="https://www.facebook.com/drinkdezo/"></img></a></li>
+    <li><a className="navbar-brand mr-auto" href="https://www.linkedin.com/company/vitalize-holdings-inc/"><img src="../assets/images/linkedin.svg" href="https://www.linkedin.com/company/vitalize-holdings-inc/"></img></a></li>
+  </div>
+
+{/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+  aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+  <span className="navbar-toggler-icon"></span>
+
+</button> */}
+
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#basicExampleNav">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar top-bar"></span>
+<span class="icon-bar middle-bar"></span>
+<span class="icon-bar bottom-bar"></span>
+                </button>
+
+
+<div className="collapse navbar-collapse" id="basicExampleNav">
+
+
+  <ul className="navbar-nav ml-auto">
+    <li className="nav-item active">
+      <a className="nav-link" href="#">Home
+        <span className="sr-only">(current)</span>
+      </a>
+    </li>
+    <li className="nav-item">
+      <a className="nav-link" href="#"><span>Our Story</span></a>
+    </li>
+    <li className="nav-item dropdown">
+      <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
+      <div className="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+        <a className="dropdown-item" href="#">Spiked Coconut Water</a>
+        <a className="dropdown-item" href="#">Spiked Cactus Water</a>
+        <a className="dropdown-item" href="#">Spiked Watermelon Water</a>
       </div>
+    </li>
+    <li className="nav-item">
+      <a className="nav-link" href="#"><span>Press</span></a>
+    </li>
+    <li className="nav-item">
+      <a className="nav-link" href="#"><span>Contact</span></a>
+    </li>
+    <li className="nav-item">
+      <a className="nav-link" href="#"><span>Find Dezo</span></a>
+    </li>
+
+
+
+
+
+  </ul>
+
+
+  {/* <form className="form-inline">
+    <div className="md-form my-0">
+      <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></input>
+    </div>
+  </form> */}
+
+</div>
+
+
+</nav>
+
     );
   }
 }
 
 export default Nav;
+
+
+
+
+//   render() {
+//     return (
+//       <nav className="navbar nav-bar-fixed-top navbar-light navbar-expand-sm">
+//       {/* <div className="container-fluid"> */}
+//               <a className="navbar-brand" href="/"><img src="../assets/images/dezo-logo.png"></img></a>
+//       <div className="d-flex flex-row order-2 order-sm-3">
+//       <ul className="navbar-nav flex-row">
+//         <li className="nav-item"><a className="nav-link px-2">HELLO<i className="fab fa-facebook"></i></a></li>
+//       </ul>
+//       </div>
+
+
+//         <div>
+//           <ScrollspyNav
+//             scrollTargetIds={[
+//               "home",
+//               "about",
+//               "products",
+//               "press",
+//               "contact",
+//               "find"
+//             ]}
+//             activeNavClass="active"
+//             scrollDuration="1000"
+//           >
+//             <ul className="nav-inner">
+
+//               <li>
+//                 <a className="nav-links" href="/">
+//                   <span>Home</span>
+//                 </a>
+//               </li>
+//               <li>
+//                 <a className="nav-links" href="#about">
+//                   <span>About</span>
+//                 </a>
+//               </li>
+//               <li>
+//                 <a className="nav-links" href="#products">
+//                   <span>Products</span>
+//                 </a>
+//               </li>
+//               <li>
+//                 <a className="nav-links" href="#press">
+//                   <span>Press</span>
+//                 </a>
+//               </li>
+//               <li>
+//                 <a className="nav-links" href="#contact">
+//                   <span>Contact</span>
+//                 </a>
+//               </li>
+//               <li>
+//                 <a className="nav-links" href="#find-dezo">
+//                   <span>Find Dezo</span>
+//                 </a>
+//               </li>
+//             </ul>
+//           </ScrollspyNav>
+//         </div>
+//       </nav>
+//     );
+//   }
+// }
+
+
 
 // class Nav extends Component {
 //   async componentDidMount() {
