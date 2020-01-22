@@ -15,7 +15,8 @@ class About extends React.Component {
       <div
         className="parallax"
         style={{
-          backgroundImage: "url(../../assets/images/forest-water.jpg)"
+          backgroundImage: "url(../../assets/images/dezo-product-resize.png)",
+          width: "100% !important"
         }}
       >
         <Page2 />

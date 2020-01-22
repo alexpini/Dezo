@@ -38,7 +38,7 @@ class App extends React.Component {
     let yearDiff = Math.abs(diff.getFullYear() - 1970);
 
     if (yearDiff < 21) {
-      this.setState({ error: "You are not 21" });
+      this.setState({ error: "We're sorry, please come back when you're 21" });
       return;
     } else {
       this.setState({ show: false, error: "" });

@@ -20,7 +20,7 @@ class Nav extends Component {
 
 <nav className="navbar navbar-expand-lg navbar-dark primary-color">
 
-  <a id="logo" className="navbar-brand mr-auto" href="/"><img src="../assets/images/dezo-logo.png" href="/about"></img></a>
+  <a id="logo" className="navbar-brand mr-auto" href="/"><img src="../assets/images/white-logo-15.png" href="/about"></img></a>
   <div class="social-icons">
     <li><a className="navbar-brand mr-auto" href="https://www.instagram.com/drinkdezo/"><img src="../assets/images/instagram.svg" href="https://www.instagram.com/drinkdezo/"></img></a></li>
      <li><a className="navbar-brand mr-auto" href="https://www.facebook.com/drinkdezo/"><img src="../assets/images/facebook.svg" href="https://www.facebook.com/drinkdezo/"></img></a></li>
@@ -57,9 +57,9 @@ class Nav extends Component {
       <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
       <div className="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-        <a className="dropdown-item" href="#">Spiked Coconut Water</a>
-        <a className="dropdown-item" href="#">Spiked Cactus Water</a>
-        <a className="dropdown-item" href="#">Spiked Watermelon Water</a>
+        <a className="dropdown-item" id="dropdown-item-coconut" href="#">Spiked Coconut Water</a>
+        <a className="dropdown-item" id="dropdown-item-cactus" href="#">Spiked Cactus Water</a>
+        <a className="dropdown-item" id="dropdown-item-watermelon"href="#">Spiked Watermelon Water</a>
       </div>
     </li>
     <li className="nav-item">
@@ -69,7 +69,7 @@ class Nav extends Component {
       <a className="nav-link" href="#"><span>Contact</span></a>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#"><span>Find Dezo</span></a>
+      <a className="nav-link" href="#"><span id="find-dezo">Find Dezo</span></a>
     </li>
 
 
