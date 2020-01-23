@@ -431,7 +431,7 @@ h2 {
   text-transform: uppercase;
 }
 .dropdown-item:hover {
-  color: #fff;
+  color: #fff !important;
   transition: 0.25s ease;
 }
 
