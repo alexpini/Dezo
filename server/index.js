@@ -14,6 +14,7 @@ const sessionStore = new SequelizeStore({ db });
 if (process.env.NODE_ENV !== "production") {
   require("../secrets");
 }
+require("dotenv").config();
 
 passport.serializeUser((user, done) => done(null, user.id));
 

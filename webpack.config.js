@@ -24,14 +24,21 @@ module.exports = {
         test: /\.css$/,
         loader: ["style-loader", "css-loader"]
       },
-      { test: /\.(png|gif|jpg|cur)$/i,
-        loader: 'url-loader', options: { limit: 8192 } },
-      { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
-      loader: 'url-loader',
-      options:{ limit: 10000, mimetype: 'application/font-woff2' } },
-      { test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
-        loader: 'url-loader',
-        options: { limit: 10000, mimetype: 'application/font-woff' } },
+      {
+        test: /\.(png|gif|jpg|cur)$/i,
+        loader: "url-loader",
+        options: { limit: 8192 }
+      },
+      {
+        test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+        loader: "url-loader",
+        options: { limit: 10000, mimetype: "application/font-woff2" }
+      },
+      {
+        test: /\.woff(\?v=[0-9]\.[0-9]\.[0-9])?$/i,
+        loader: "url-loader",
+        options: { limit: 10000, mimetype: "application/font-woff" }
+      },
       {
         test: /\.jpg$/,
         loader: ["file-loader"]
