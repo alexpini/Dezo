@@ -26,6 +26,7 @@ class _WhereToBuyCreate extends React.Component {
   };
 
   async componentDidMount() {
+    console.log(process.env.GOOG_KEY);
     this.props.getAllStores();
     await window.navigator.geolocation.getCurrentPosition(async position => {
       let obj = {};
@@ -170,5 +171,5 @@ const WhereToBuyCreate = connect(mS, mD)(_WhereToBuyCreate);
 // export default WhereToBuyCreate;
 
 export default GoogleApiWrapper({
-  apiKey: process.env.GOOG_KEY // can be found in secrets, may have to be replaced in development with the string val
+  apiKey: "AIzaSyAmr2BCU8-PycL9HHxbhLrQVV5gg9Q92CM" // can be found in secrets, may have to be replaced in development with the string val
 })(WhereToBuyCreate);

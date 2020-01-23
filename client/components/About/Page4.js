@@ -5,8 +5,8 @@ export const Page4 = props => {
     <div
         className="parallax"
         style={{
-          backgroundImage: "url(../../assets/images/water-02.jpg)",
-          width: "100%"
+          backgroundImage: "url(../../assets/images/wave-02.jpg)",
+          height: "100vh"
         }}
       >
     <section className="about-page_4">
