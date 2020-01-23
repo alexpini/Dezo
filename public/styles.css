@@ -442,7 +442,7 @@ body {
  }
 
  .dropdown-item {
-  color: #eb793c !important;
+  color: #eb793c;
   font-family: "montserrat", sans-serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -1321,8 +1321,8 @@ body {
 #connect-category {
   font-size: 3vw;
   text-align: center;
-  padding: 2vw !important;
-  letter-spacing: 0.08em !important;
+  padding: 1vw !important;
+  letter-spacing: 0.08em;
 }
 
 #connect-name {

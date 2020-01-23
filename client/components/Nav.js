@@ -34,7 +34,7 @@ class Nav extends Component {
 </button> */}
 
 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#basicExampleNav">
-                    {/* <span class="sr-only">Toggle navigation</span> */}
+                    <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar top-bar"></span>
 <span class="icon-bar middle-bar"></span>
 <span class="icon-bar bottom-bar"></span>
