@@ -1,8 +1,8 @@
 import React from "react";
 
-export const Page2 = props => {
+export const BuyHeader = props => {
   return (
-    <section className="about-part_2" id="landing-header">
+    <section className="header" id="landing-header">
       <h1>
         <img
           className="image-twenty-one"

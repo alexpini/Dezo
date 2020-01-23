@@ -17,13 +17,13 @@ class Nav extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark primary-color">
-        <a id="logo" className="navbar-brand mr-auto" href="/">
-          <img src="../assets/images/white-logo-15.png" href="/about"></img>
+        <a id="logo" className="navbar-brand mr-auto" href="/#/about">
+          <img src="../assets/images/white-logo-15.png"></img>
         </a>
-        <div class="social-icons">
+        <div className="social-icons">
           <li>
             <a
-              className="navbar-brand mr-auto"
+              className="navbar-social mr-auto"
               href="https://www.instagram.com/drinkdezo/"
             >
               <img
@@ -34,7 +34,7 @@ class Nav extends Component {
           </li>
           <li>
             <a
-              className="navbar-brand mr-auto"
+              className="navbar-social mr-auto"
               href="https://www.facebook.com/drinkdezo/"
             >
               <img
@@ -45,7 +45,7 @@ class Nav extends Component {
           </li>
           <li>
             <a
-              className="navbar-brand mr-auto"
+              className="navbar-social mr-auto"
               href="https://www.linkedin.com/company/vitalize-holdings-inc/"
             >
               <img
@@ -77,13 +77,7 @@ class Nav extends Component {
         <div className="collapse navbar-collapse" id="basicExampleNav">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Home
-                <span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#about">
                 <span>Our Story</span>
               </a>
             </li>
@@ -104,34 +98,38 @@ class Nav extends Component {
                 <a
                   className="dropdown-item"
                   id="dropdown-item-coconut"
-                  href="#"
+                  href="#products"
                 >
                   Spiked Coconut Water
                 </a>
-                <a className="dropdown-item" id="dropdown-item-cactus" href="#">
+                <a
+                  className="dropdown-item"
+                  id="dropdown-item-cactus"
+                  href="#products"
+                >
                   Spiked Cactus Water
                 </a>
                 <a
                   className="dropdown-item"
                   id="dropdown-item-watermelon"
-                  href="#"
+                  href="#products"
                 >
                   Spiked Watermelon Water
                 </a>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="#press">
                 <span>Press</span>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/#/contact">
                 <span>Contact</span>
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/buy/">
+              <a className="nav-link" href="/#/buy">
                 <span id="find-dezo">Find Dezo</span>
               </a>
             </li>
