@@ -951,7 +951,7 @@ label {
  } */
 
 header {
-  position: relative;
+  /* position: relative; */
   background-color: black;
   height: 75vh;
   min-height: 25rem;
@@ -1022,7 +1022,7 @@ header .overlay {
   justify-content: space-around;
   align-items: center;
   height: auto;
-  margin: 5rem;
+  /* margin: 5rem; */
 }
 
 .press-compressed {
@@ -1032,7 +1032,7 @@ header .overlay {
   align-items: center;
   justify-content: space-around;
   align-items: center;
-  height: 50vh;
+  height: auto;
 }
 
 #press-button {
@@ -1052,7 +1052,7 @@ header .overlay {
 
 .press-child {
   flex: 1 0 25%; /* explanation below */
-  margin: 1rem;
+  /* margin: 1rem; */
   width: 100%;
 }
 
@@ -1284,6 +1284,7 @@ button:hover {
   justify-content: space-between;
   align-items: center;
   margin: 3rem;
+  margin-top: 0;
 }
 
 #connect-category {
