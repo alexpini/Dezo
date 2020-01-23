@@ -26,6 +26,7 @@ class _WhereToBuyCreate extends React.Component {
   };
 
   async componentDidMount() {
+    console.log(process.env.GOOG_KEY);
     this.props.getAllStores();
     await window.navigator.geolocation.getCurrentPosition(async position => {
       let obj = {};

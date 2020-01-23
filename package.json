@@ -60,7 +60,7 @@
     "postinstall": "npm run webpack",
     "webpack": "webpack --mode=production",
     "webpack:dev": "webpack --w --mode=development",
-    "start:dev": "kill -9 $(lsof -t -i:42069) & NODE_ENV='development' nodemon server/index.js & npm run webpack:dev & touch secrets2.js",
+    "start:dev": "kill -9 $(lsof -t -i:42069) & NODE_ENV='development' nodemon server/index.js & npm run webpack:dev",
     "start": "NODE_ENV='production' node server/index.js",
     "kill": "ps -ef | grep 42069"
   },

@@ -10,86 +10,140 @@ import About from "./About/About";
 //links solid orange and webkit enlarge when hovered
 // import ScrollspyNav from "react-scrollspy-nav";
 
-
 class Nav extends Component {
   async componentDidMount() {
     await this.props.me();
   }
   render() {
     return (
+      <nav className="navbar navbar-expand-lg navbar-dark primary-color">
+        <a id="logo" className="navbar-brand mr-auto" href="/">
+          <img src="../assets/images/white-logo-15.png" href="/about"></img>
+        </a>
+        <div class="social-icons">
+          <li>
+            <a
+              className="navbar-brand mr-auto"
+              href="https://www.instagram.com/drinkdezo/"
+            >
+              <img
+                src="../assets/images/instagram.svg"
+                href="https://www.instagram.com/drinkdezo/"
+              ></img>
+            </a>
+          </li>
+          <li>
+            <a
+              className="navbar-brand mr-auto"
+              href="https://www.facebook.com/drinkdezo/"
+            >
+              <img
+                src="../assets/images/facebook.svg"
+                href="https://www.facebook.com/drinkdezo/"
+              ></img>
+            </a>
+          </li>
+          <li>
+            <a
+              className="navbar-brand mr-auto"
+              href="https://www.linkedin.com/company/vitalize-holdings-inc/"
+            >
+              <img
+                src="../assets/images/linkedin.svg"
+                href="https://www.linkedin.com/company/vitalize-holdings-inc/"
+              ></img>
+            </a>
+          </li>
+        </div>
 
-<nav className="navbar navbar-expand-lg navbar-dark primary-color">
-
-  <a id="logo" className="navbar-brand mr-auto" href="/"><img src="../assets/images/white-logo-15.png" href="/about"></img></a>
-  <div class="social-icons">
-    <li><a className="navbar-brand mr-auto" href="https://www.instagram.com/drinkdezo/"><img src="../assets/images/instagram.svg" href="https://www.instagram.com/drinkdezo/"></img></a></li>
-     <li><a className="navbar-brand mr-auto" href="https://www.facebook.com/drinkdezo/"><img src="../assets/images/facebook.svg" href="https://www.facebook.com/drinkdezo/"></img></a></li>
-    <li><a className="navbar-brand mr-auto" href="https://www.linkedin.com/company/vitalize-holdings-inc/"><img src="../assets/images/linkedin.svg" href="https://www.linkedin.com/company/vitalize-holdings-inc/"></img></a></li>
-  </div>
-
-{/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+        {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
   aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
   <span className="navbar-toggler-icon"></span>
 
 </button> */}
 
-<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#basicExampleNav">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar top-bar"></span>
-<span class="icon-bar middle-bar"></span>
-<span class="icon-bar bottom-bar"></span>
-                </button>
+        <button
+          type="button"
+          className="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#basicExampleNav"
+        >
+          <span className="sr-only">Toggle navigation</span>
+          <span className="icon-bar top-bar"></span>
+          <span className="icon-bar middle-bar"></span>
+          <span className="icon-bar bottom-bar"></span>
+        </button>
 
+        <div className="collapse navbar-collapse" id="basicExampleNav">
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item active">
+              <a className="nav-link" href="#">
+                Home
+                <span className="sr-only">(current)</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <span>Our Story</span>
+              </a>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                PRODUCTS
+              </a>
+              <div
+                className="dropdown-menu dropdown-primary"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a
+                  className="dropdown-item"
+                  id="dropdown-item-coconut"
+                  href="#"
+                >
+                  Spiked Coconut Water
+                </a>
+                <a className="dropdown-item" id="dropdown-item-cactus" href="#">
+                  Spiked Cactus Water
+                </a>
+                <a
+                  className="dropdown-item"
+                  id="dropdown-item-watermelon"
+                  href="#"
+                >
+                  Spiked Watermelon Water
+                </a>
+              </div>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <span>Press</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <span>Contact</span>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#/buy/">
+                <span id="find-dezo">Find Dezo</span>
+              </a>
+            </li>
+          </ul>
 
-<div className="collapse navbar-collapse" id="basicExampleNav">
-
-
-  <ul className="navbar-nav ml-auto">
-    <li className="nav-item active">
-      <a className="nav-link" href="#">Home
-        <span className="sr-only">(current)</span>
-      </a>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link" href="#"><span>Our Story</span></a>
-    </li>
-    <li className="nav-item dropdown">
-      <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
-      <div className="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-        <a className="dropdown-item" id="dropdown-item-coconut" href="#">Spiked Coconut Water</a>
-        <a className="dropdown-item" id="dropdown-item-cactus" href="#">Spiked Cactus Water</a>
-        <a className="dropdown-item" id="dropdown-item-watermelon"href="#">Spiked Watermelon Water</a>
-      </div>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link" href="#"><span>Press</span></a>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link" href="#"><span>Contact</span></a>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link" href="#"><span id="find-dezo">Find Dezo</span></a>
-    </li>
-
-
-
-
-
-  </ul>
-
-
-  {/* <form className="form-inline">
+          {/* <form className="form-inline">
     <div className="md-form my-0">
       <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"></input>
     </div>
   </form> */}
-
-</div>
-
-
-</nav>
-
+        </div>
+      </nav>
     );
   }
 }
@@ -103,9 +157,6 @@ const mD = {
 
 export default connect(mS, mD)(Nav);
 
-
-
-
 //   render() {
 //     return (
 //       <nav className="navbar nav-bar-fixed-top navbar-light navbar-expand-sm">
@@ -116,7 +167,6 @@ export default connect(mS, mD)(Nav);
 //         <li className="nav-item"><a className="nav-link px-2">HELLO<i className="fab fa-facebook"></i></a></li>
 //       </ul>
 //       </div>
-
 
 //         <div>
 //           <ScrollspyNav
@@ -170,8 +220,6 @@ export default connect(mS, mD)(Nav);
 //     );
 //   }
 // }
-
-
 
 // class Nav extends Component {
 //   async componentDidMount() {
