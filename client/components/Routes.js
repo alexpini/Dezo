@@ -4,9 +4,9 @@ import Products from "./Products/Products";
 import About from "./About/About";
 import Press from "./Press/Press";
 import PressMaster from "./Press/PressMaster";
-import ConnectWith from "./Connect/ConnectWIth";
+import ConnectMaster from "./Connect/ConnectMaster";
 import WhereToBuy from "./Buy/WhereToBuy";
-import WhereToBuyCreate from "./Buy/WhereToBuyCreate";
+import WhereToBuyMaster from "./Buy/WhereToBuyMaster";
 import Landing from "./Users/Landing";
 import CreateProduct from "./Products/CreateProduct";
 import AuthForm from "./Users/CreateAdmin";
@@ -31,9 +31,9 @@ class Routes extends Component {
         <Redirect exact from="/" to="/about" />
         <Route exact path="/products" component={Products} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={ConnectWith} />
+        <Route exact path="/contact" component={ConnectMaster} />
         <Route exact path="/press" component={PressMaster} />
-        <Route exact path="/buy" component={WhereToBuyCreate} />
+        <Route exact path="/buy" component={WhereToBuyMaster} />
         <Route exact path="/dezo/admin/" component={AuthForm} />
         <Route exact path="/articles" component={Press} />
         {/* <Route exact path="/dezo/admin" component={Login} /> */}

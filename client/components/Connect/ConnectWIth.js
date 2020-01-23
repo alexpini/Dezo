@@ -1,33 +1,49 @@
 import React from "react";
 import { ConnHeaders, ConnLinks } from "./ConnHeaders";
 
-const press = [
-  { name: "Tom", phone: "123-456-7890" },
-  { name: "Alex", phone: "123-456-7890" },
-  { name: "Marc", phone: "123-456-7890" },
-  { name: "Matt", phone: "123-456-7890" },
-  { name: "Eliot", phone: "123-456-7890" },
-  { name: "Jonathan", phone: "123-456-7890" }
+const connect = [
+  {
+    name: "Tomas",
+    category: "Media Inquiries & PR",
+    phone: "(818) 903-7153",
+    email: "tomas@vitalizeholdings.com"
+  },
+  {
+    name: "Tim",
+    category: "Investment Opportunities",
+    phone: "(617) 459-5121",
+    email: "tim@vitalizeholdings.com"
+  }
 ];
 
 export default class ConnectWith extends React.Component {
   state = {
-    press: []
+    connect: []
   };
   componentDidMount() {
-    this.setState({ press });
+    this.setState({ connect });
   }
   render() {
     return (
-      <div id="press" style={{ padding: "15rem" }}>
-        <h1 style={{ textAlign: "center" }}>Contact</h1>
-        <div className="press-container">
-          {this.state.press.map((p, idx) => {
+      <div
+        className="new"
+        style={{
+          backgroundColor: "white",
+          width: "100%"
+        }}
+      >
+
+
+        <div className="connect-container">
+        <h2 id="connect-h2">Based in Los Angeles, California</h2>
+
+          {this.state.connect.map((c, idx) => {
             return (
-              <div key={idx}>
-                {p.name}
-                <br />
-                {p.phone}
+
+              <div className="connect-container" key={idx}>
+                <div><h1 id="connect-category">{c.category}</h1></div>
+                <div><h3 id="connect-phone">{c.phone}</h3></div>
+                <div><h3 id="connect-email">{c.email}</h3></div>
               </div>
             );
           })}
@@ -36,17 +52,3 @@ export default class ConnectWith extends React.Component {
     );
   }
 }
-
-// export default class ConnectWith extends React.Component {
-//   render() {
-//     return (
-//       <section id="contact" style={{ marginTop: "15rem", height: "600px", margin: "auto" }}>
-//         <div className='connect'>
-//           <h1 style={{ textAlign: "center" }}>Connect With Us</h1>
-//           <ConnHeaders />
-//           <ConnLinks />
-//         </div>
-//       </section>
-//     );
-//   }
-// }

@@ -1,21 +1,21 @@
 import React from "react";
-import Press from "./Press";
-import { PressHeader } from "./PressHeader";
+import ConnectWith from "./ConnectWith";
+import { ConnectHeader } from "./ConnectHeader";
 
-class PressMaster extends React.Component {
+class ConnectMaster extends React.Component {
   render() {
     return (
       <div
         className="parallax"
-        id="press"
+        id="connect"
         style={{
           backgroundImage: "url(../../assets/images/wave-02.jpg)",
           width: "100% !important"
         }}
       >
-      <PressHeader />
+      <ConnectHeader />
         <div className="press-master">
-          <Press />
+          <ConnectWith />
         </div>
 
       </div>
@@ -23,4 +23,4 @@ class PressMaster extends React.Component {
   }
 }
 
-export default PressMaster;
+export default ConnectMaster;

@@ -1,5 +1,5 @@
 import React from "react";
-import Products from "../Products/Products";
+import {Products} from "../Products/Products";
 // import ConnectWith from "../Connect/ConnectWIth";
 import { Link } from "react-router-dom";
 // import CreateProduct from "../Products/CreateProduct";
@@ -7,7 +7,7 @@ import { Page2 } from "./Page2";
 import { Page22 } from "./Page2-2";
 import { Page3 } from "./Page3";
 import { Page4 } from "./Page4";
-import PressMaster from "../Press/PressMaster";
+import {PressAbout} from "../Press/PressAbout";
 
 class About extends React.Component {
   render() {
@@ -22,7 +22,7 @@ class About extends React.Component {
         <Page2 />
         <Page22 />
         <div>
-          <Products />
+          <Products/>
         </div>
 
         <Page3 />
@@ -48,25 +48,9 @@ class About extends React.Component {
             backgroundColor: "white"
           }}
         >
-          <PressMaster
-            about={true}
-            style={{
-              backgroundColor: "white !important",
-              width: "100%"
-            }}
-          />
-          <button id="button-press" type="button-center">
-            <Link
-              to="/press#new"
-              className="view-more hat"
-              style={{
-                textDecoration: "none",
-                color: "#fff"
-              }}
-            >
-              Read More
-            </Link>
-          </button>
+          <PressAbout/>
+
+
         </div>
       </div>
     );

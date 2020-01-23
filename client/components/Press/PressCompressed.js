@@ -2,7 +2,7 @@ import React from "react";
 import { getPressArticles } from "../../store";
 import { connect } from "react-redux";
 
-class Press extends React.Component {
+class PressCompressed extends React.Component {
   componentDidMount() {
     this.props.getPressArticles();
   }
@@ -22,7 +22,7 @@ class Press extends React.Component {
           width: "100%"
         }}
       >
-        <div className="press">
+        <div className="press-compressed">
           {articles.map(p => {
             return (
               <div
@@ -55,7 +55,7 @@ class Press extends React.Component {
 const mS = ({ press }) => ({ press });
 const mD = { getPressArticles };
 
-export default connect(mS, mD)(Press);
+export default connect(mS, mD)(PressCompressed);
 
 
 
