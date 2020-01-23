@@ -1,5 +1,5 @@
 import React from "react";
-import ConnectWith from "./ConnectWith";
+import ConnectWith from "./ConnectWIth";
 import { ConnectHeader } from "./ConnectHeader";
 
 class ConnectMaster extends React.Component {
@@ -13,11 +13,10 @@ class ConnectMaster extends React.Component {
           width: "100% !important"
         }}
       >
-      <ConnectHeader />
+        <ConnectHeader />
         <div className="press-master">
           <ConnectWith />
         </div>
-
       </div>
     );
   }
