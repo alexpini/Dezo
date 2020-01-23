@@ -22,9 +22,9 @@ class Nav extends Component {
 
   <a id="logo" className="navbar-brand mr-auto" href="/"><img src="../assets/images/white-logo-15.png" href="/about"></img></a>
   <div class="social-icons">
-    <li><a className="navbar-brand mr-auto" href="https://www.instagram.com/drinkdezo/"><img src="../assets/images/instagram.svg" href="https://www.instagram.com/drinkdezo/"></img></a></li>
-     <li><a className="navbar-brand mr-auto" href="https://www.facebook.com/drinkdezo/"><img src="../assets/images/facebook.svg" href="https://www.facebook.com/drinkdezo/"></img></a></li>
-    <li><a className="navbar-brand mr-auto" href="https://www.linkedin.com/company/vitalize-holdings-inc/"><img src="../assets/images/linkedin.svg" href="https://www.linkedin.com/company/vitalize-holdings-inc/"></img></a></li>
+    <li><a className="navbar-social mr-auto" href="https://www.instagram.com/drinkdezo/"><img src="../assets/images/instagram.svg" href="https://www.instagram.com/drinkdezo/"></img></a></li>
+     <li><a className="navbar-social mr-auto" href="https://www.facebook.com/drinkdezo/"><img src="../assets/images/facebook.svg" href="https://www.facebook.com/drinkdezo/"></img></a></li>
+    <li><a className="navbar-social mr-auto" href="https://www.linkedin.com/company/vitalize-holdings-inc/"><img src="../assets/images/linkedin.svg" href="https://www.linkedin.com/company/vitalize-holdings-inc/"></img></a></li>
   </div>
 
 {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -51,25 +51,25 @@ class Nav extends Component {
       </a>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#"><span>Our Story</span></a>
+      <a className="nav-link" href="#about"><span>Our Story</span></a>
     </li>
-    <li className="nav-item dropdown">
+    <li className="nav-item dropdown" >
       <a className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
       <div className="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-        <a className="dropdown-item" id="dropdown-item-coconut" href="#">Spiked Coconut Water</a>
-        <a className="dropdown-item" id="dropdown-item-cactus" href="#">Spiked Cactus Water</a>
-        <a className="dropdown-item" id="dropdown-item-watermelon"href="#">Spiked Watermelon Water</a>
+        <a className="dropdown-item" id="dropdown-item-coconut" href="#products">Spiked Coconut Water</a>
+        <a className="dropdown-item" id="dropdown-item-cactus" href="#products">Spiked Cactus Water</a>
+        <a className="dropdown-item" id="dropdown-item-watermelon"href="#products">Spiked Watermelon Water</a>
       </div>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#"><span>Press</span></a>
+      <a className="nav-link" href="#press"><span>Press</span></a>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#"><span>Contact</span></a>
+      <a className="nav-link" href="/#/contact"><span>Contact</span></a>
     </li>
     <li className="nav-item">
-      <a className="nav-link" href="#"><span id="find-dezo">Find Dezo</span></a>
+      <a className="nav-link" href="/#/buy"><span id="find-dezo">Find Dezo</span></a>
     </li>
 
 

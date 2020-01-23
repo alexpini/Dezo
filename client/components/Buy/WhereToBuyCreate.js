@@ -61,12 +61,17 @@ class _WhereToBuyCreate extends React.Component {
       store = stores.find(s => s.name === storeName);
     }
     if (!this.state.coords.lat) {
-      return <div style={{ height: "60vh", width: "70vw" }}> Loading .. </div>;
+      return <div style={{
+        height: "70vh",
+        width: "70vw",
+        color: "#eb793c",
+        fontFamily: "Montserrat, sans-serif;"
+        }}> Loading .. </div>;
     } else {
       return (
-        <div style={{ paddingTop: "5rem", height: "auto" }}>
+
+        <div className="where-to-buy-create" style={{ paddingTop: "5rem", height: "auto", backgroundColor: "#fffff !important"}}>
           <div>
-            <h1>Locations</h1>
             {user.isAdmin && (
               <form onSubmit={this.handleSubmit} className="form add-store">
                 <h4 style={{ textAlign: "center" }}>Add New Store, {fName}</h4>
@@ -111,14 +116,36 @@ class _WhereToBuyCreate extends React.Component {
               </form>
             )}
 
-            <div style={{ height: "auto", width: "100%" }}>
+            <div className="map-page" style={{ height: "auto", width: "100%" }}>
               {this.state.show && <Pointer store={store} />}
             </div>
             {/* please do not remove div below. this is so the maps position: absolute can be 'faked.' if you change the size of the map, you must change these accordingly to equal the same size ALLLEEEXXXAANNDDRRRRRAAA */}
+            <div>
+            <form className="location-form">
+
+              <input
+                className="map-inputs"
+                id="find-button"
+                name="zipcode"
+                placeholder="ZIPCODE"
+                maxLength="5"
+              />
+              <li className="nav-item dropdown">
+                <a className="flavor-selector dropdown-toggle" id="find-button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">ANY FLAVOR</a>
+                <div className="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                  <a className="dropdown-item" id="dropdown-item-coconut" href="#">Spiked Coconut Water</a>
+                  <a className="dropdown-item" id="dropdown-item-cactus" href="#">Spiked Cactus Water</a>
+                  <a className="dropdown-item" id="dropdown-item-watermelon"href="#">Spiked Watermelon Water</a>
+                </div>
+              </li>
+              <button id="find-button" type="submit">FIND</button>
+            </form>
+            </div>
             <div
               style={{
-                height: "40vh",
-                width: "40vw"
+                height: "90vh",
+                width: "auto"
               }}
             >
               {stores.length && (
@@ -127,8 +154,8 @@ class _WhereToBuyCreate extends React.Component {
                   initialCenter={this.state.coords}
                   zoom={7}
                   style={{
-                    height: "40vh",
-                    width: "40vw",
+                    height: "70vh",
+                    width: "70vw",
                     marginLeft: "auto",
                     marginRight: "auto"
                   }}
