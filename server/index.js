@@ -207,14 +207,14 @@ const seed = async () => {
 };
 
 const syncDb = async () => {
-  db.sync({ force: true });
-  // db.sync();
+  // db.sync({ force: true });
+  db.sync();
 };
 
 async function bootApp() {
   await sessionStore.sync();
   await syncDb();
-  // await seed();
+  await seed();
   await createApp();
   await startListening();
 }

@@ -32,9 +32,7 @@ class _WhereToBuyCreate extends React.Component {
 
   async componentDidMount() {
     await this.props.getAllStores();
-    let obj = {};
-    obj.lng = this.props.stores[0].lng;
-    obj.lat = this.props.stores[0].lat;
+    let obj = { lat: 34.0522, lng: -118.2437 };
     await this.setState({ coords: obj, loading: false });
   }
 
