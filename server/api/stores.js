@@ -6,6 +6,7 @@ const googleMapsClient = require("@google/maps").createClient({
   key: GOOGLE_MAP_KEY,
   Promise: Promise
 });
+const google = require("@google/maps");
 
 router.post("/", async (req, res, next) => {
   try {
@@ -38,6 +39,26 @@ router.get("/", async (req, res, next) => {
     res.json(stores);
   } catch (er) {
     next(er);
+  }
+});
+
+router.post("/zip", async (req, res, next) => {
+  try {
+    let obj = {};
+    let address = req.body.zipcode;
+    const s = await googleMapsClient.geocode({ address }, (status, result) => {
+      let { results } = result.json;
+      if (result.status === 200) {
+        obj.lat = results[0].geometry.location.lat;
+        obj.lng = results[0].geometry.location.lng;
+      } else {
+        res.json("EMPTY");
+        console.log("GEOCODE was not successful: ");
+      }
+      res.json(obj);
+    });
+  } catch (e) {
+    next(e);
   }
 });
 
