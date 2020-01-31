@@ -84,98 +84,137 @@ const startListening = async () => {
   // start listening (and create a 'server' object representing our server)
   app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`));
 };
+const seed = async () => {
+  try {
+    await User.findOrCreate({
+      where: {
+        email: "dezo@email.com",
+        fName: "Marc",
+        lName: "W.",
+        isAdmin: true
+      },
+      defaults: {
+        password: "1"
+      }
+    });
+    await Press.findOrCreate({
+      where: {
+        name: "Dezo Article One"
+      },
+      defaults: {
+        description: "Small blurb about the article goes here.",
+        imgURL: "https://jooinn.com/images/fresh-150.jpg",
+        link: "https://www.instagram.com/drinkdezo/"
+      }
+    });
+    await Press.findOrCreate({
+      where: {
+        name: "Dezo Article Two"
+      },
+      defaults: {
+        description: "Small blurb about the article goes here.",
+        imgURL: "https://jooinn.com/images/fresh-150.jpg",
+        link: "https://www.instagram.com/drinkdezo/"
+      }
+    });
+    await Press.findOrCreate({
+      where: {
+        name: "Dezo Article Three"
+      },
+      defaults: {
+        description: "Small blurb about the article goes here.",
+        imgURL: "https://jooinn.com/images/fresh-150.jpg",
+        link: "https://www.instagram.com/drinkdezo/"
+      }
+    });
+    await Press.findOrCreate({
+      where: {
+        name: "Dezo Article Four"
+      },
+      defaults: {
+        description: "Small blurb about the article goes here.",
+        imgURL:
+          "https://cdn.artaic.com/wp-content/uploads/2015/03/artaic-orange-nature-poppy-tangerine-splash-tile-0300810-900x600.jpg",
+        link: "https://www.instagram.com/drinkdezo/"
+      }
+    });
+    await Press.findOrCreate({
+      where: {
+        name: "Dezo Article Five"
+      },
+      defaults: {
+        description: "Small blurb about the article goes here.",
+        imgURL: "https://jooinn.com/images/fresh-150.jpg",
+        link: "https://www.instagram.com/drinkdezo/"
+      }
+    });
+    await Press.findOrCreate({
+      where: {
+        name: "Dezo Article Six"
+      },
+      defaults: {
+        description: "Small blurb about the article goes here.",
+        imgURL: "https://jooinn.com/images/fresh-150.jpg",
+        link: "https://www.instagram.com/drinkdezo/"
+      }
+    });
+    await Store.findOrCreate({
+      where: {
+        name: "Pini's Pizzeria"
+      },
+      defaults: {
+        address1: "749 Boston RD",
+        city: "Billerica",
+        state: "MA",
+        zip: "01821",
+        flavors: "Spiked Coconut Water, Spiked Cactus Water",
+        lat: 42.5584,
+        lng: -71.2689
+      }
+    });
+
+    await Store.findOrCreate({
+      where: {
+        name: "Toms Tacos"
+      },
+      defaults: {
+        address1: "1150 Laurel Ln",
+        city: "San Luis Obispo",
+        state: "CA",
+        zip: "93401",
+        flavors: "Spiked Watermelon Water",
+        lat: 35.2828,
+        lng: -120.6596
+      }
+    });
+    await Store.findOrCreate({
+      where: {
+        name: "House"
+      },
+      defaults: {
+        address1: "2458 Walnut St",
+        city: "Walnut Park",
+        state: "CA",
+        zip: "90255",
+        flavors: "Any Flavor",
+        lat: 34.0522,
+        lng: -118.2437
+      }
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 const syncDb = async () => {
   // db.sync({ force: true });
   db.sync();
-  await User.findOrCreate({
-    where: {
-      email: "dezo@email.com",
-      fName: "Marc",
-      lName: "W.",
-      isAdmin: true
-    },
-    defaults: {
-      password: "1"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article One"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Two"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Three"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Four"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL:
-        "https://cdn.artaic.com/wp-content/uploads/2015/03/artaic-orange-nature-poppy-tangerine-splash-tile-0300810-900x600.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Five"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Press.findOrCreate({
-    where: {
-      name: "Dezo Article Six"
-    },
-    defaults: {
-      description: "Small blurb about the article goes here.",
-      imgURL: "https://jooinn.com/images/fresh-150.jpg",
-      link: "https://www.instagram.com/drinkdezo/"
-    }
-  });
-  await Store.findOrCreate({
-    where: {
-      name: "Pini's Pizzeria"
-    },
-    defaults: {
-      address1: "749 Boston RD",
-      city: "Billerica",
-      state: "MA",
-      zip: "01821"
-    }
-  });
 };
 
 async function bootApp() {
   await sessionStore.sync();
   await syncDb();
+  await seed();
   await createApp();
   await startListening();
 }
