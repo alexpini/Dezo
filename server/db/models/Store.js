@@ -29,6 +29,9 @@ const Store = db.define("store", {
   },
   lng: {
     type: Sequelize.FLOAT
+  },
+  flavors: {
+    type: Sequelize.STRING
   }
 });
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import Products from "./Products/Products";
+import { Products } from "./Products/Products";
 import About from "./About/About";
 import Press from "./Press/Press";
 import PressMaster from "./Press/PressMaster";
